@@ -39,6 +39,7 @@
 #include <afxcontrolbars.h>
 #include <afxwin.h>
 #include <afxwin.h>
+#include <afxwin.h>
 
 
 
