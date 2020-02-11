@@ -14,6 +14,7 @@ int len;
 #include "WRITEMODE.h"
 #include "afxdialogex.h"
 #include "nouser.h"
+#include "ABI_TREE.h"
 #include <stdlib.h>
 
 FILE* WRITEsave;
@@ -3602,7 +3603,9 @@ void WRITEMODE::OnBnClickedButton1()
 		딜러, 탱커, 힐러, 하프 = false;
 		TRACE("딜러=%d\n", data.딜러);
 		TRACE("TIME:WRITEMODE,test=%d\n", data.요우무_하이브리드);
-
+		//특성을 검사합니다.
+		ABI_TREE tree;
+		tree.DoModal();
 		//저장합니다
 		put(name, FALSE, data);
 		//작동종료
