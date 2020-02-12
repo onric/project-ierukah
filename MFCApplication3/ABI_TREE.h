@@ -147,6 +147,132 @@ public:
 	afx_msg void OnBnClickedButton30();
 	afx_msg void OnBnClickedButton27();
 	afx_msg void OnBnClickedButton31();
+	void enabling()
+	{
+		if (a_1 == TRUE)
+		{
+			신비로운반지.EnableWindow(TRUE);
+			치명적인탄환.EnableWindow(TRUE);
+		}
+		if (b_1 == TRUE)
+		{
+			깨물기.EnableWindow(TRUE);
+			이동의즐거움.EnableWindow(TRUE);
+		}
+		if (c_1 == TRUE)
+		{
+			판다렌의화염작렬.EnableWindow(TRUE);
+			마법부스터.EnableWindow(TRUE);
+		}
+		if (d_1 == TRUE)
+		{
+			단단한벽.EnableWindow(TRUE);
+			마법의망토.EnableWindow(TRUE);
+		}
+		if (e_1 == TRUE)
+		{
+			고대신비의마법서.EnableWindow(TRUE);
+			산뜻한기분.EnableWindow(TRUE);
+		}
+		if (a_2 == TRUE)
+		{
+			갈망의검.EnableWindow(TRUE);
+		}
+		if (b_2 == TRUE)
+		{
+			지배전투의기본.EnableWindow(TRUE);
+			지배푸른영기.EnableWindow(TRUE);
+		}
+		if (c_2 == TRUE)
+		{
+			마법전투의기본.EnableWindow(TRUE);
+			마법푸른영기.EnableWindow(TRUE);
+		}
+		if (d_2 == TRUE)
+		{
+			강인한체력.EnableWindow(TRUE);
+		}
+		if (e_2 == TRUE)
+		{
+			활력증진.EnableWindow(TRUE);
+			저돌적인공격방식.EnableWindow(TRUE);
+			신비한공격방식.EnableWindow(TRUE);
+		}
+		if (a_3 == TRUE)
+		{
+			투쟁갑옷무력화.EnableWindow(TRUE);
+			투쟁저항무력화.EnableWindow(TRUE);
+		}
+		if (b_3 == TRUE)
+		{
+			지배갑옷무력화.EnableWindow(TRUE);
+			지배저항무력화.EnableWindow(TRUE);
+		}
+		if (c_3 == TRUE)
+		{
+			마법갑옷무력화.EnableWindow(TRUE);
+			마법저항무력화.EnableWindow(TRUE);
+		}
+		if (d_3 == TRUE)
+		{
+			신비의방패.EnableWindow(TRUE);
+			저항의방패.EnableWindow(TRUE);
+		}
+		if (e_3 == TRUE)
+		{
+			경험치사기꾼.EnableWindow(TRUE);
+			골드도둑.EnableWindow(TRUE);
+		}
+		if (a_4 == TRUE)
+		{
+			투쟁타격용분.EnableWindow(TRUE);
+			투쟁마법용분.EnableWindow(TRUE);
+		}
+		if (b_4 == TRUE)
+		{
+			지배물리용분.EnableWindow(TRUE);
+			지배마법용분.EnableWindow(TRUE);
+		}
+		if (c_4 == TRUE)
+		{
+			마법물리용분.EnableWindow(TRUE);
+			마법마법용분.EnableWindow(TRUE);
+		}
+		if (d_4 == TRUE)
+		{
+			긍지최후의방어.EnableWindow(TRUE);
+		}
+		if (e_4 == TRUE)
+		{
+			축복최후의방어.EnableWindow(TRUE);
+		}
+		if (a_5 == TRUE)
+		{
+			집중사격.EnableWindow(TRUE);
+			무자비한연사.EnableWindow(TRUE);
+			환상적인공격.EnableWindow(TRUE);
+		}
+		if (b_5 == TRUE)
+		{
+			제우스의분노.EnableWindow(TRUE);
+			오디세우스의성검.EnableWindow(TRUE);
+		}
+		if (c_5 == TRUE)
+		{
+			대마법신비로운메테오.EnableWindow(TRUE);
+			마법펀치.EnableWindow(TRUE);
+		}
+		if (d_5 == TRUE)
+		{
+			곰발바닥.EnableWindow(TRUE);
+			토르의분노.EnableWindow(TRUE);
+		}
+		if (e_5 == TRUE)
+		{
+			마법의점멸.EnableWindow(TRUE);
+			신의가호.EnableWindow(TRUE);
+		}
+	}
 	CButton 백조의부름;
 	CButton 회복의삼지창;
 	CButton 밤의사냥꾼;
@@ -161,17 +287,75 @@ public:
 	CButton 치명적인탄환;
 	CButton 깨물기;
 	CButton 이동의즐거움;
-	void enabling()
-	{
-		if (a_1 == TRUE)
-		{
-			신비로운반지.EnableWindow(TRUE);
-			치명적인탄환.EnableWindow(TRUE);
-		}
-		if (b_1 == TRUE)
-		{
-			깨물기.EnableWindow(TRUE);
-			이동의즐거움.EnableWindow(TRUE);
-		}
-	}
+	CButton 판다렌의화염작렬;
+	CButton 마법부스터;
+	CButton 단단한벽;
+	CButton 마법의망토;
+	CButton 고대신비의마법서;
+	CButton 산뜻한기분;
+	CButton 갈망의검;
+	CButton 지배전투의기본;
+	CButton 지배푸른영기;
+	CButton 마법전투의기본;
+	CButton 마법푸른영기;
+	CButton 강인한체력;
+	CButton 활력증진;
+	CButton 저돌적인공격방식;
+	CButton 신비한공격방식;
+	CButton 투쟁갑옷무력화;
+	CButton 투쟁저항무력화;
+	CButton 지배갑옷무력화;
+	CButton 지배저항무력화;
+	CButton 마법갑옷무력화;
+	CButton 마법저항무력화;
+	CButton 신비의방패;
+	CButton 저항의방패;
+	CButton 경험치사기꾼;
+	CButton 골드도둑;
+	CButton 투쟁타격용분;
+	CButton 투쟁마법용분;
+	CButton 지배물리용분;
+	CButton 지배마법용분;
+	CButton 마법물리용분;
+	CButton 마법마법용분;
+	CButton 긍지최후의방어;
+	CButton 축복최후의방어;
+	CButton 집중사격;
+	CButton 무자비한연사;
+	CButton 환상적인공격;
+	CButton 제우스의분노;
+	CButton 오디세우스의성검;
+	CButton 대마법신비로운메테오;
+	CButton 마법펀치;
+	CButton 곰발바닥;
+	CButton 토르의분노;
+	CButton 마법의점멸;
+	CButton 신의가호;
+	afx_msg void OnBnClickedButton33();
+	afx_msg void OnBnClickedButton34();
+	afx_msg void OnBnClickedButton35();
+	afx_msg void OnBnClickedButton36();
+	afx_msg void OnBnClickedButton37();
+	afx_msg void OnBnClickedButton38();
+	afx_msg void OnBnClickedButton39();
+	afx_msg void OnBnClickedButton40();
+	afx_msg void OnBnClickedButton41();
+	afx_msg void OnBnClickedButton42();
+	afx_msg void OnBnClickedButton43();
+	afx_msg void OnBnClickedButton44();
+	afx_msg void OnBnClickedButton45();
+	afx_msg void OnBnClickedButton46();
+	afx_msg void OnBnClickedButton47();
+	afx_msg void OnBnClickedButton48();
+	afx_msg void OnBnClickedButton49();
+	afx_msg void OnBnClickedButton50();
+	afx_msg void OnBnClickedButton51();
+	afx_msg void OnBnClickedButton52();
+	afx_msg void OnBnClickedButton53();
+	afx_msg void OnBnClickedButton54();
+	afx_msg void OnBnClickedButton55();
+	afx_msg void OnBnClickedButton56();
+	afx_msg void OnBnClickedButton57();
+	afx_msg void OnBnClickedButton58();
+	afx_msg void OnBnClickedReset();
 };
