@@ -189,7 +189,7 @@ void ABI_TREE::OnBnClickedButton1()//백조의 부름
 			}
 			회복의삼지창.EnableWindow(FALSE);
 			TRACE("버튼 비활성화\n");
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 	TRACE("함수종료\n");
@@ -210,7 +210,7 @@ void ABI_TREE::OnBnClickedButton2()
 				a_1 = TRUE;
 			}
 			백조의부름.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -236,7 +236,7 @@ void ABI_TREE::OnBnClickedButton3()//밤사
 				b_1 = TRUE;
 			}
 			비겁한고블린.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -258,7 +258,7 @@ void ABI_TREE::OnBnClickedButton4()//고블린
 				b_1 = TRUE;
 			}
 			밤의사냥꾼.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -280,7 +280,7 @@ void ABI_TREE::OnBnClickedButton5()//깨달음
 				c_1 = TRUE;
 			}
 			흑마법.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -302,7 +302,7 @@ void ABI_TREE::OnBnClickedButton6()//흑마법
 				c_1 = TRUE;
 			}
 			깨달음.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -324,7 +324,7 @@ void ABI_TREE::OnBnClickedButton7()//
 				d_1 = TRUE;
 			}
 			아레스의투구.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -346,7 +346,7 @@ void ABI_TREE::OnBnClickedButton8()
 				d_1 = TRUE;
 			}
 			음과양의조화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -368,7 +368,7 @@ void ABI_TREE::OnBnClickedButton9()
 				e_1 = TRUE;
 			}
 			축복의장화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -390,7 +390,7 @@ void ABI_TREE::OnBnClickedButton10()
 				e_1 = TRUE;
 			}
 			라식.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -413,7 +413,7 @@ void ABI_TREE::OnBnClickedButton11()//신비로운 반지
 				a_1 = FALSE;
 			}
 			치명적인탄환.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -436,7 +436,7 @@ void ABI_TREE::OnBnClickedButton12()//치명적인탄환
 				a_1 = FALSE;
 			}
 			신비로운반지.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -459,7 +459,7 @@ void ABI_TREE::OnBnClickedButton13()//깨물기
 				b_1 = FALSE;
 			}
 			이동의즐거움.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -482,7 +482,7 @@ void ABI_TREE::OnBnClickedButton14()//이동의즐거움
 				b_1 = FALSE;
 			}
 			깨물기.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -505,7 +505,7 @@ void ABI_TREE::OnBnClickedButton15()//화작
 				c_1 = FALSE;
 			}
 			마법부스터.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -528,7 +528,7 @@ void ABI_TREE::OnBnClickedButton16()//마부
 				c_1 = FALSE;
 			}
 			판다렌의화염작렬.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -548,7 +548,7 @@ void ABI_TREE::OnBnClickedButton17()//단단한벽
 				d_1 = FALSE;
 			}
 			마법의망토 .EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -568,7 +568,7 @@ void ABI_TREE::OnBnClickedButton18()//망토
 				d_1 = FALSE;
 			}
 			단단한벽.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -590,7 +590,7 @@ void ABI_TREE::OnBnClickedButton19()//마법서
 				e_1 = FALSE;
 			}
 			산뜻한기분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -613,7 +613,7 @@ void ABI_TREE::OnBnClickedButton20()
 				e_1 = FALSE;
 			}
 			고대신비의마법서.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -636,7 +636,7 @@ void ABI_TREE::OnBnClickedButton21()//갈망의검
 				a_2 = FALSE;
 			}
 			//단독라인으로 비활성화할 개체없음
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -659,7 +659,7 @@ void ABI_TREE::OnBnClickedButton22()//지배 전투의기본
 				b_2 = FALSE;
 			}
 			지배푸른영기.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -682,7 +682,7 @@ void ABI_TREE::OnBnClickedButton23()
 				b_2 = FALSE;
 			}
 			지배전투의기본.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -705,7 +705,7 @@ void ABI_TREE::OnBnClickedButton24()
 				c_2 = FALSE;
 			}
 			마법푸른영기.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -728,7 +728,7 @@ void ABI_TREE::OnBnClickedButton25()
 				c_2 = FALSE;
 			}
 			마법전투의기본.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -751,7 +751,7 @@ void ABI_TREE::OnBnClickedButton26()//강인한체력
 				d_2 = FALSE;
 			}
 			//단독라인
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -775,7 +775,7 @@ void ABI_TREE::OnBnClickedButton28()//활력증진
 			}
 			신비한공격방식.EnableWindow(FALSE);
 			저돌적인공격방식.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -799,7 +799,7 @@ void ABI_TREE::OnBnClickedButton29()
 			}
 			신비한공격방식.EnableWindow(FALSE);
 			활력증진.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -823,7 +823,7 @@ void ABI_TREE::OnBnClickedButton30()//신비한공격
 			}
 			활력증진.EnableWindow(FALSE);
 			저돌적인공격방식.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -846,7 +846,7 @@ void ABI_TREE::OnBnClickedButton27()//투쟁갑옷무력화
 				a_3 = FALSE;
 			}
 			투쟁저항무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -869,7 +869,7 @@ void ABI_TREE::OnBnClickedButton31()
 				a_3 = FALSE;
 			}
 			투쟁갑옷무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -904,7 +904,7 @@ void ABI_TREE::OnBnClickedButton32()
 				b_3 = FALSE;
 			}
 			지배저항무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -928,7 +928,7 @@ void ABI_TREE::OnBnClickedButton33()
 				b_3 = FALSE;
 			}
 			지배갑옷무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -951,7 +951,7 @@ void ABI_TREE::OnBnClickedButton34()//마법갑무
 				c_3 = FALSE;
 			}
 			마법저항무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -974,7 +974,7 @@ void ABI_TREE::OnBnClickedButton35()
 				c_3 = FALSE;
 			}
 			마법갑옷무력화.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -997,7 +997,7 @@ void ABI_TREE::OnBnClickedButton36()//신비의방패
 				d_3 = FALSE;
 			}
 			저항의방패.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1020,7 +1020,7 @@ void ABI_TREE::OnBnClickedButton37()
 				d_3 = FALSE;
 			}
 			신비의방패.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1043,7 +1043,7 @@ void ABI_TREE::OnBnClickedButton38()//경사
 				e_3 = FALSE;
 			}
 			골드도둑.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1066,7 +1066,7 @@ void ABI_TREE::OnBnClickedButton39()
 				e_3 = FALSE;
 			}
 			경험치사기꾼.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1089,7 +1089,7 @@ void ABI_TREE::OnBnClickedButton40()//타격용분
 				a_4 = FALSE;
 			}
 			투쟁마법용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1112,7 +1112,7 @@ void ABI_TREE::OnBnClickedButton41()
 				a_4 = FALSE;
 			}
 			투쟁타격용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1135,7 +1135,7 @@ void ABI_TREE::OnBnClickedButton42()
 				b_4 = FALSE;
 			}
 			지배마법용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1159,7 +1159,7 @@ void ABI_TREE::OnBnClickedButton43()
 				b_4 = FALSE;
 			}
 			지배물리용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1182,7 +1182,7 @@ void ABI_TREE::OnBnClickedButton44()
 				c_4 = FALSE;
 			}
 			마법마법용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1205,7 +1205,7 @@ void ABI_TREE::OnBnClickedButton45()
 				c_4 = FALSE;
 			}
 			마법물리용분.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1228,7 +1228,7 @@ void ABI_TREE::OnBnClickedButton46()//긍지최후의방어
 				d_4 = FALSE;
 			}
 			//단일라인
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1251,7 +1251,7 @@ void ABI_TREE::OnBnClickedButton47()//축복최후의방어
 				e_4 = FALSE;
 			}
 			//단일라인
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1274,7 +1274,7 @@ void ABI_TREE::OnBnClickedButton48()
 			}
 			무자비한연사.EnableWindow(FALSE);
 			환상적인공격.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1297,7 +1297,7 @@ void ABI_TREE::OnBnClickedButton49()
 			}
 			집중사격.EnableWindow(FALSE);
 			환상적인공격.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1320,7 +1320,7 @@ void ABI_TREE::OnBnClickedButton50()
 			}
 			무자비한연사.EnableWindow(FALSE);
 			집중사격.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1342,7 +1342,7 @@ void ABI_TREE::OnBnClickedButton51()
 				b_5 = FALSE;
 			}
 			오디세우스의성검.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1364,7 +1364,7 @@ void ABI_TREE::OnBnClickedButton52()
 				b_5 = FALSE;
 			}
 			제우스의분노.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1386,7 +1386,7 @@ void ABI_TREE::OnBnClickedButton53()
 				c_5 = FALSE;
 			}
 			마법펀치.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1408,7 +1408,7 @@ void ABI_TREE::OnBnClickedButton54()
 				c_5 = FALSE;
 			}
 			대마법신비로운메테오.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1430,7 +1430,7 @@ void ABI_TREE::OnBnClickedButton55()
 				d_5 = FALSE;
 			}
 			토르의분노.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1452,7 +1452,7 @@ void ABI_TREE::OnBnClickedButton56()
 				d_5 = FALSE;
 			}
 			곰발바닥.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1474,7 +1474,7 @@ void ABI_TREE::OnBnClickedButton57()
 				e_5 = FALSE;
 			}
 			신의가호.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
@@ -1496,7 +1496,7 @@ void ABI_TREE::OnBnClickedButton58()
 				e_5 = FALSE;
 			}
 			마법의점멸.EnableWindow(FALSE);
-			enabling();
+			if(point>0){enabling();}
 		}
 	}
 }
