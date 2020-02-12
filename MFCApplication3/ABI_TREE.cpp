@@ -190,6 +190,19 @@ void ABI_TREE::OnBnClickedButton1()//백조의 부름
 			회복의삼지창.EnableWindow(FALSE);
 			TRACE("버튼 비활성화\n");
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE);	}
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE);}
+			}
 		}
 	}
 	TRACE("함수종료\n");
@@ -211,6 +224,19 @@ void ABI_TREE::OnBnClickedButton2()
 			}
 			백조의부름.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -237,6 +263,19 @@ void ABI_TREE::OnBnClickedButton3()//밤사
 			}
 			비겁한고블린.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -259,6 +298,19 @@ void ABI_TREE::OnBnClickedButton4()//고블린
 			}
 			밤의사냥꾼.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -281,6 +333,19 @@ void ABI_TREE::OnBnClickedButton5()//깨달음
 			}
 			흑마법.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -303,6 +368,19 @@ void ABI_TREE::OnBnClickedButton6()//흑마법
 			}
 			깨달음.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -325,6 +403,19 @@ void ABI_TREE::OnBnClickedButton7()//
 			}
 			아레스의투구.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -347,6 +438,19 @@ void ABI_TREE::OnBnClickedButton8()
 			}
 			음과양의조화.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -369,6 +473,19 @@ void ABI_TREE::OnBnClickedButton9()
 			}
 			축복의장화.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -391,6 +508,19 @@ void ABI_TREE::OnBnClickedButton10()
 			}
 			라식.EnableWindow(FALSE);
 			if(point>0){enabling();}
+			if (point == 0)
+			{
+				if (a_1_1 == FALSE) { 백조의부름.EnableWindow(FALSE); }
+				if (a_1_2 == FALSE) { 회복의삼지창.EnableWindow(FALSE); }
+				if (b_1_1 == FALSE) { 밤의사냥꾼.EnableWindow(FALSE); }
+				if (b_1_2 == FALSE) { 비겁한고블린.EnableWindow(FALSE); }
+				if (c_1_1 == FALSE) { 깨달음.EnableWindow(FALSE); }
+				if (c_1_2 == FALSE) { 흑마법.EnableWindow(FALSE); }
+				if (d_1_1 == FALSE) { 음과양의조화.EnableWindow(FALSE); }
+				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
+				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
+				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+			}
 		}
 	}
 }
@@ -414,6 +544,7 @@ void ABI_TREE::OnBnClickedButton11()//신비로운 반지
 			}
 			치명적인탄환.EnableWindow(FALSE);
 			if(point>0){enabling();}
+
 		}
 	}
 }

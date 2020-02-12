@@ -149,6 +149,7 @@ public:
 	afx_msg void OnBnClickedButton31();
 	void enabling()
 	{
+
 		if (a_1 == TRUE)
 		{
 			신비로운반지.EnableWindow(TRUE);
