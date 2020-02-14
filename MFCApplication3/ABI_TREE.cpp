@@ -178,6 +178,11 @@ void ABI_TREE::OnBnClickedButton1()//백조의 부름
 		if (a_1_1 != TRUE)
 		{
 			a_1_1 = TRUE;
+			if (TRE_a == 0)
+			{
+				TRE_count++;
+			}
+			TRE_a++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			UpdateData(TRUE);
@@ -202,6 +207,16 @@ void ABI_TREE::OnBnClickedButton1()//백조의 부름
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE);}
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -215,6 +230,11 @@ void ABI_TREE::OnBnClickedButton2()
 		if (a_1_2 != TRUE)
 		{
 			a_1_2 = TRUE;
+			if (TRE_a == 0)
+			{
+				TRE_count++;
+			}
+			TRE_a++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -236,6 +256,16 @@ void ABI_TREE::OnBnClickedButton2()
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -254,6 +284,11 @@ void ABI_TREE::OnBnClickedButton3()//밤사
 		if (b_1_1 != TRUE)
 		{
 			b_1_1 = TRUE;
+			if (TRE_b == 0)
+			{
+				TRE_count++;
+			}
+			TRE_b++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -275,6 +310,16 @@ void ABI_TREE::OnBnClickedButton3()//밤사
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -289,6 +334,11 @@ void ABI_TREE::OnBnClickedButton4()//고블린
 		if (b_1_2 != TRUE)
 		{
 			b_1_2 = TRUE;
+			if (TRE_b == 0)
+			{
+				TRE_count++;
+			}
+			TRE_b++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -310,6 +360,16 @@ void ABI_TREE::OnBnClickedButton4()//고블린
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -324,6 +384,11 @@ void ABI_TREE::OnBnClickedButton5()//깨달음
 		if (c_1_1 != TRUE)
 		{
 			c_1_1 = TRUE;
+			if (TRE_c == 0)
+			{
+				TRE_count++;
+			}
+			TRE_c++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -345,6 +410,16 @@ void ABI_TREE::OnBnClickedButton5()//깨달음
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -359,6 +434,11 @@ void ABI_TREE::OnBnClickedButton6()//흑마법
 		if (c_1_2 != TRUE)
 		{
 			c_1_2 = TRUE;
+			if (TRE_c == 0)
+			{
+				TRE_count++;
+			}
+			TRE_c++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -380,6 +460,16 @@ void ABI_TREE::OnBnClickedButton6()//흑마법
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -394,6 +484,11 @@ void ABI_TREE::OnBnClickedButton7()//
 		if (d_1_1 != TRUE)
 		{
 			d_1_1 = TRUE;
+			if (TRE_d == 0)
+			{
+				TRE_count++;
+			}
+			TRE_d++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -415,6 +510,16 @@ void ABI_TREE::OnBnClickedButton7()//
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -429,6 +534,11 @@ void ABI_TREE::OnBnClickedButton8()
 		if (d_1_2 != TRUE)
 		{
 			d_1_2 = TRUE;
+			if (TRE_d == 0)
+			{
+				TRE_count++;
+			}
+			TRE_d++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -450,6 +560,16 @@ void ABI_TREE::OnBnClickedButton8()
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -464,6 +584,11 @@ void ABI_TREE::OnBnClickedButton9()
 		if (e_1_1 != TRUE)
 		{
 			e_1_1 = TRUE;
+			if (TRE_e == 0)
+			{
+				TRE_count++;
+			}
+			TRE_e++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -485,6 +610,16 @@ void ABI_TREE::OnBnClickedButton9()
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -499,6 +634,12 @@ void ABI_TREE::OnBnClickedButton10()
 		if (e_1_2 != TRUE)
 		{
 			e_1_2 = TRUE;
+			if (TRE_e == 0)
+			{
+				TRE_count++;
+			}
+			TRE_e++;
+			
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
@@ -520,6 +661,16 @@ void ABI_TREE::OnBnClickedButton10()
 				if (d_1_2 == FALSE) { 아레스의투구.EnableWindow(FALSE); }
 				if (e_1_1 == FALSE) { 라식.EnableWindow(FALSE); }
 				if (e_1_2 == FALSE) { 축복의장화.EnableWindow(FALSE); }
+				if (a_2_1 == FALSE) { 신비로운반지.EnableWindow(FALSE); }
+				if (a_2_2 == FALSE) { 치명적인탄환.EnableWindow(FALSE); }
+				if (b_2_1 == FALSE) { 깨물기.EnableWindow(FALSE); }
+				if (b_2_2 == FALSE) { 이동의즐거움.EnableWindow(FALSE); }
+				if (c_2_1 == FALSE) { 판다렌의화염작렬.EnableWindow(FALSE); }
+				if (c_2_2 == FALSE) { 마법부스터.EnableWindow(FALSE); }
+				if (d_2_1 == FALSE) { 단단한벽.EnableWindow(FALSE); }
+				if (d_2_2 == FALSE) { 마법의망토.EnableWindow(FALSE); }
+				if (e_2_1 == FALSE) { 고대신비의마법서.EnableWindow(FALSE); }
+				if (e_2_2 == FALSE) { 산뜻한기분.EnableWindow(FALSE); }
 			}
 		}
 	}
@@ -534,13 +685,17 @@ void ABI_TREE::OnBnClickedButton11()//신비로운 반지
 		if (a_2_1 != TRUE)
 		{
 			a_2_1 = TRUE;
+			if (TRE_a == 0)
+			{
+				TRE_count++;
+			}
+			TRE_a++;
 			point--;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (a_2 == FALSE)
 			{
 				a_2 = TRUE;
-				a_1 = FALSE;
 			}
 			치명적인탄환.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -559,12 +714,16 @@ void ABI_TREE::OnBnClickedButton12()//치명적인탄환
 		{
 			a_2_2 = TRUE;
 			point--;
+			if (TRE_a == 0)
+			{
+				TRE_count++;
+			}
+			TRE_a++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (a_2 == FALSE)
 			{
 				a_2 = TRUE;
-				a_1 = FALSE;
 			}
 			신비로운반지.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -582,12 +741,16 @@ void ABI_TREE::OnBnClickedButton13()//깨물기
 		{
 			b_2_1 = TRUE;
 			point--;
+			if (TRE_b == 0)
+			{
+				TRE_count++;
+			}
+			TRE_b++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (b_2 == FALSE)
 			{
 				b_2 = TRUE;
-				b_1 = FALSE;
 			}
 			이동의즐거움.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -605,12 +768,16 @@ void ABI_TREE::OnBnClickedButton14()//이동의즐거움
 		{
 			b_2_2 = TRUE;
 			point--;
+			if (TRE_b == 0)
+			{
+				TRE_count++;
+			}
+			TRE_b++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (b_2 == FALSE)
 			{
 				b_2 = TRUE;
-				b_1 = FALSE;
 			}
 			깨물기.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -628,12 +795,16 @@ void ABI_TREE::OnBnClickedButton15()//화작
 		{
 			c_2_1 = TRUE;
 			point--;
+			if (TRE_c == 0)
+			{
+				TRE_count++;
+			}
+			TRE_c++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (c_2 == FALSE)
 			{
 				c_2 = TRUE;
-				c_1 = FALSE;
 			}
 			마법부스터.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -651,12 +822,16 @@ void ABI_TREE::OnBnClickedButton16()//마부
 		{
 			c_2_2 = TRUE;
 			point--;
+			if (TRE_c == 0)
+			{
+				TRE_count++;
+			}
+			TRE_c++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (c_2 == FALSE)
 			{
 				c_2 = TRUE;
-				c_1 = FALSE;
 			}
 			판다렌의화염작렬.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -671,12 +846,16 @@ void ABI_TREE::OnBnClickedButton17()//단단한벽
 		{
 			d_2_1 = TRUE;
 			point--;
+			if (TRE_d == 0)
+			{
+				TRE_count++;
+			}
+			TRE_d++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (d_2 == FALSE)
 			{
 				d_2 = TRUE;
-				d_1 = FALSE;
 			}
 			마법의망토 .EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -691,12 +870,16 @@ void ABI_TREE::OnBnClickedButton18()//망토
 		{
 			d_2_2 = TRUE;
 			point--;
+			if (TRE_d == 0)
+			{
+				TRE_count++;
+			}
+			TRE_d++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (d_2 == FALSE)
 			{
 				d_2 = TRUE;
-				d_1 = FALSE;
 			}
 			단단한벽.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -713,12 +896,16 @@ void ABI_TREE::OnBnClickedButton19()//마법서
 		{
 			e_2_1 = TRUE;
 			point--;
+			if (TRE_e == 0)
+			{
+				TRE_count++;
+			}
+			TRE_e++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (e_2 == FALSE)
 			{
 				e_2 = TRUE;
-				e_1 = FALSE;
 			}
 			산뜻한기분.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -736,12 +923,16 @@ void ABI_TREE::OnBnClickedButton20()
 		{
 			e_2_2 = TRUE;
 			point--;
+			if (TRE_e == 0)
+			{
+				TRE_count++;
+			}
+			TRE_e++;
 			point_buf.Format(_T("%d"), point);
 			dis_point.SetWindowTextW(point_buf);
 			if (e_2 == FALSE)
 			{
 				e_2 = TRUE;
-				e_1 = FALSE;
 			}
 			고대신비의마법서.EnableWindow(FALSE);
 			if(point>0){enabling();}
@@ -1636,6 +1827,12 @@ void ABI_TREE::OnBnClickedButton58()
 void ABI_TREE::OnBnClickedReset()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	TRE_a = 0;
+	TRE_b = 0;
+	TRE_c = 0;
+	TRE_d = 0;
+	TRE_e = 0;
+	TRE_count = 0;
 	 a_1 = FALSE;
 	 a_2 = FALSE;
 	 a_3 = FALSE;
@@ -1734,20 +1931,20 @@ void ABI_TREE::OnBnClickedReset()
 	라식.EnableWindow(TRUE);
 	축복의장화.EnableWindow(TRUE);
 	//비활성화
-		신비로운반지.EnableWindow(FALSE);
-		치명적인탄환.EnableWindow(FALSE);
+		신비로운반지.EnableWindow(TRUE);
+		치명적인탄환.EnableWindow(TRUE);
 	
-		깨물기.EnableWindow(FALSE);
-		이동의즐거움.EnableWindow(FALSE);
+		깨물기.EnableWindow(TRUE);
+		이동의즐거움.EnableWindow(TRUE);
 
-		판다렌의화염작렬.EnableWindow(FALSE);
-		마법부스터.EnableWindow(FALSE);
+		판다렌의화염작렬.EnableWindow(TRUE);
+		마법부스터.EnableWindow(TRUE);
 	
-		단단한벽.EnableWindow(FALSE);
-		마법의망토.EnableWindow(FALSE);
+		단단한벽.EnableWindow(TRUE);
+		마법의망토.EnableWindow(TRUE);
 	
-		고대신비의마법서.EnableWindow(FALSE);
-		산뜻한기분.EnableWindow(FALSE);
+		고대신비의마법서.EnableWindow(TRUE);
+		산뜻한기분.EnableWindow(TRUE);
 	
 		갈망의검.EnableWindow(FALSE);
 	

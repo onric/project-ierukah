@@ -126,9 +126,154 @@ class chara
 				승률 = 승수 / 게임횟수;
 			}
 		}
+		void init()
+		{
+			 연승 = 0;
+			 연패 = 0;
+			 레이팅 = 0;
+			 킬 = 0;
+			 데스 = 0;
+			 어시스트 = 0;
+			 게임횟수 = 0;
+			 승수 = 0;
+			 패수 = 0;
+			 승률 = 0;
+			 백조의부름 = 0;
+			 회복의삼지창 = 0;
+			 밤의사냥꾼 = 0;
+			 비겁한고블린 = 0;
+			 깨달음 = 0;
+			 흑마법 = 0;
+			 음과양의조화 = 0;
+			 아레스의투구 = 0;
+			 라식 = 0;
+			 축복의장화 = 0;
+			 신비로운반지 = 0;
+			 치명적인탄환 = 0;
+			 깨물기 = 0;
+			 이동의즐거움 = 0;
+			 판다렌의화염작렬 = 0;
+			 마법부스터 = 0;
+			 단단한벽 = 0;
+			 마법의망토 = 0;
+			 고대신비의마법서 = 0;
+			 산뜻한기분 = 0;
+			 갈망의검 = 0;
+			 지배전투의기본 = 0;
+			 지배푸른영기 = 0;
+			 마법전투의기본 = 0;
+			 마법푸른영기 = 0;
+			 강인한체력 = 0;
+			 활력증진 = 0;
+			 저돌적인공격방식 = 0;
+			 신비한공격방식 = 0;
+			 투쟁갑옷무력화 = 0;
+			 투쟁저항무력화 = 0;
+			 지배갑옷무력화 = 0;
+			 지배저항무력화 = 0;
+			 마법갑옷무력화 = 0;
+			 마법저항무력화 = 0;
+			 신비의방패 = 0;
+			 저항의방패 = 0;
+			 경험치사기꾼 = 0;
+			 골드도둑 = 0;
+			 투쟁타격용분 = 0;
+			 투쟁마법용분 = 0;
+			 지배물리용분 = 0;
+			 지배마법용분 = 0;
+			 마법물리용분 = 0;
+			 마법마법용분 = 0;
+			 긍지최후의방어 = 0;
+			 축복최후의방어 = 0;
+			 집중사격 = 0;
+			 무자비한연사 = 0;
+			 환상적인공격 = 0;
+			 제우스의분노 = 0;
+			 오디세우스의성검 = 0;
+			 대마법신비로운메테오 = 0;
+			 마법펀치 = 0;
+			 곰발바닥 = 0;
+			 토르의분노 = 0;
+			 마법의점멸 = 0;
+			 신의가호 = 0;
+		}
 };
-
-
+struct newdata//일단 총합데이터에 필요한 데이터가 모자라니깐... chara에 넣긴 뭐하고
+{
+	int 주포지션 = 0;//0=미정,1=딜,2=탱,3=힐
+	int 탱커 = 0;//
+	int 딜러 = 0;//
+	int 힐러 = 0;//
+	void init()
+	{
+			 주포지션 = 0;//0=미정,1=딜,2=탱,3=힐
+			 탱커 = 0;//
+			 딜러 = 0;//
+			 힐러 = 0;//
+	}
+};
+static newdata N_dataSTR;
+static chara 총합;//1
+static chara 요우무_r1;//2
+static chara 요우무_r2;//3
+static chara 요우무_하이브리드;//4
+static chara 레이무;//5
+static chara 치르노;//6
+static chara 사쿠야_딜러;//7
+static chara 사쿠야_탱커;//8
+static chara 이쿠;//9
+static chara 무라사_물리;//10
+static chara 무라사_마법;//11
+static chara 무라사_하이브리드;//12
+static chara 레이센_탱커;//13
+static chara 레이센_딜러;//14
+static chara 레이센_하이브리드;//15
+static chara 앨리스_물리;//16
+static chara 앨리스_마법;//17
+static chara 앨리스_하이브리드;//18
+static chara 레밀리아;//19
+static chara 플랑도르;//20
+static chara 흑화치르노;//21
+static chara 어드밴스드요우무_r1;//22
+static chara 어드밴스드요우무_r2;//23
+static chara 어드밴스드요우무_r3;//24
+static chara 마리사_딜러;//25
+static chara 마리사_힐러;//26
+static chara 마리사_하이브리드;//27
+static chara 유카리;//28
+static chara 모코우;//29
+static chara 어드밴트모미지;//30
+static chara 파츄리;//31
+static chara 우츠호;//32
+static chara 스와코;//33
+static chara 텐시_딜러;//34
+static chara 텐시_탱커;//35
+static chara 어드밴트치르노;//36
+static chara 코마치;//37
+static chara 아야;//38
+static chara 어드밴스드메이린;//39
+static chara 사나에;//40
+static chara 레티;//41
+static chara 유유코;//42
+static chara 에이린;//43
+static chara 사토리;//44
+static chara 바쿠렌;//45
+static chara 카구야;//46
+static chara 미코;//47
+static chara 누에;//48
+static chara 스이카;//49
+static chara 시키;//50
+static chara 유카;//51
+static chara 흑화요우무;//52
+static chara 어드밴트플랑;//53
+static chara 헤이메이린;//54
+static chara 홍메이린;//55
+static chara 흑화카구야;//56
+static chara 모미지;//57
+static chara 흑화무라사;//58
+static chara 조온;//59
+static chara 악마레이무;//60
+static chara 흑화텐시;//61
 //구조체를 버릴거야 버릴거라구! 이히히히!
 //이제 구조체는 통합정보를 볼때만 씁니다. 그렇게 만들거야
 struct dataSTR
@@ -417,77 +562,74 @@ struct dataSTR
 
 //뉴우 영역
 
-static inline void M_CHARA()//CHARA를 일괄 선언하는 함수입니다.
+static void REF_chara()//chara를 일괄 초기화합니다
 {
-	chara 요우무_r1;
-	chara 요우무_r2;
-	chara 요우무_하이브리드;
-	chara 레이무;//
-	chara 치르노;//
-	chara 사쿠야_딜러;
-	chara 사쿠야_탱커;
-	chara 이쿠;//
-	chara 무라사_물리;//
-	chara 무라사_마법;//
-	chara 무라사_하이브리드;//
-	chara 레이센_탱커;//
-	chara 레이센_딜러;//
-	chara 레이센_하이브리드;//
-	chara 앨리스_물리;//
-	chara 앨리스_마법;//
-	chara 앨리스_하이브리드;//
-	chara 레밀리아;//
-	chara 플랑도르;//
-	chara 흑화치르노;//
-	chara 어드밴스드요우무_r1;//
-	chara 어드밴스드요우무_r2;//
-	chara 어드밴스드요우무_r3;//
-	chara 마리사_딜러;//
-	chara 마리사_힐러;//
-	chara 마리사_하이브리드;//
-	chara 유카리;//
-	chara 모코우;//
-	chara 어드밴트모미지;//
-	chara 파츄리;//
-	chara 우츠호;//
-	chara 스와코;//
-	chara 텐시_딜러;
-	chara 텐시_탱커;
-	chara 어드밴트치르노;//
-	chara 코마치;//
-	chara 아야;//
-	chara 어드밴스드메이린;//
-	chara 사나에;//
-	chara 레티;//
-	chara 유유코;//
-	chara 에이린;
-	chara 사토리;
-	chara 바쿠렌;
-	chara 카구야;
-	chara 미코;
-	chara 누에;
-	chara 스이카;
-	chara 시키;
-	chara 유카;
-	chara 흑화요우무;
-	chara 어드밴트플랑;
-	chara 헤이메이린;
-	chara 홍메이린;
-	chara 흑화카구야;
-	chara 모미지;
-	chara 흑화무라사;
-	chara 조온;
-	chara 악마레이무;
-	chara 흑화텐시;
+	총합.init();
+	요우무_r1.init();
+	요우무_r2.init();
+	요우무_하이브리드.init();
+	레이무.init();//
+	치르노.init();//
+	사쿠야_딜러.init();
+	사쿠야_탱커.init();
+	이쿠.init();//
+	무라사_물리.init();//
+	무라사_마법.init();//
+	무라사_하이브리드.init();//
+	레이센_탱커.init();//
+	레이센_딜러.init();//
+	레이센_하이브리드.init();//
+	앨리스_물리.init();//
+	앨리스_마법.init();//
+	앨리스_하이브리드.init();//
+	레밀리아.init();//
+	플랑도르.init();//
+	흑화치르노.init();//
+	어드밴스드요우무_r1.init();//
+	어드밴스드요우무_r2.init();//
+	어드밴스드요우무_r3.init();//
+	마리사_딜러.init();//
+	마리사_힐러.init();//
+	마리사_하이브리드.init();//
+	유카리.init();//
+	모코우.init();//
+	어드밴트모미지.init();//
+	파츄리.init();//
+	우츠호.init();//
+	스와코.init();//
+	텐시_딜러.init();
+	텐시_탱커.init();
+	어드밴트치르노.init();//
+	코마치.init();//
+	아야.init();//
+	어드밴스드메이린.init();//
+	사나에.init();//
+	레티.init();//
+	유유코.init();//
+	에이린.init();
+	사토리.init();
+	바쿠렌.init();
+	카구야.init();
+	미코.init();
+	누에.init();
+	스이카.init();
+	시키.init();
+	유카.init();
+	흑화요우무.init();
+	어드밴트플랑.init();
+	헤이메이린.init();
+	홍메이린.init();
+	흑화카구야.init();
+	모미지.init();
+	흑화무라사.init();
+	조온.init();
+	악마레이무.init();
+	흑화텐시.init();
 }
 static void putdata(char* name)
 {
 	TRACE("신식 입력함수에 진입\n");
 	savefile = fopen(name, "w");
-	TRACE("CHARA생성\n");
-	M_CHARA();
-	//
-	
 	//
 	if (savefile == NULL)
 	{
@@ -495,7 +637,41 @@ static void putdata(char* name)
 		AfxMessageBox(_T("오류! 저장소 작성에 실패했습니다."));
 	}
 	fflush(savefile);
-
+	//시스템정보
+	fprintf(savefile, "버젼=%2lf\n", 현재버젼);
+	fprintf(savefile, "게임횟수=%d\n", 총합.게임횟수);
+	fprintf(savefile, "승리=%d\n", 총합.승수);
+	fprintf(savefile, "패배=%d\n", 총합.패수);
+	fprintf(savefile, "승률=%2lf\n", 총합.승률);
+	fprintf(savefile, "레이팅=%d\n", 총합.레이팅);
+	fprintf(savefile, "연승=%d\n", 총합.연승);
+	fprintf(savefile, "연패=%d\n", 총합.연패);
+	fprintf(savefile, "킬=%d\n", 총합.킬);
+	fprintf(savefile, "데스=%d\n", 총합.데스);
+	fprintf(savefile, "어시스트=%d\n", 총합.어시스트);
+	fprintf(savefile, "주포지션=%d\n",N_dataSTR.주포지션 );
+	fprintf(savefile, "탱커=%d\n", N_dataSTR.탱커);
+	fprintf(savefile, "딜러=%d\n", N_dataSTR.딜러);
+	fprintf(savefile, "힐러=%d\n", N_dataSTR.힐러);
+	
+	//요우무r1
+	fprintf(savefile, "요우무_r1플레이횟수=%d\n", 요우무_r1.게임횟수);
+	fprintf(savefile, "요우무_r1승리=%d\n", 요우무_r1.승수);
+	fprintf(savefile, "요우무_r1패배=%d\n", 요우무_r1.패수);
+	fprintf(savefile, "요우무_r1승률=%2lf\n", 요우무_r1.승률);
+	fprintf(savefile, "요우무_r1레이팅=%d\n", 요우무_r1.레이팅);
+	fprintf(savefile, "요우무_r1연승=%d\n", 요우무_r1.연승);
+	fprintf(savefile, "요우무_r1연패=%d\n", 요우무_r1.연패);
+	fprintf(savefile, "요우무_r1킬=%d\n", 요우무_r1.킬);
+	fprintf(savefile, "요우무_r1데스=%d\n", 요우무_r1.데스);
+	fprintf(savefile, "요우무_r1어시스트=%d\n", 요우무_r1.어시스트);
+	fprintf(savefile, "요우무_r1백조의부름=%d\n", 요우무_r1.백조의부름);
+	fprintf(savefile, "요우무_r1회복의삼지창=%d\n", 요우무_r1.회복의삼지창);
+	fprintf(savefile, "요우무_r1밤의사냥꾼=%d\n", 요우무_r1.밤의사냥꾼);
+	fprintf(savefile, "요우무_r1비겁한고블린=%d\n", 요우무_r1.비겁한고블린);
+	fprintf(savefile, "요우무_r1깨달음=%d\n", 요우무_r1.깨달음);
+	fprintf(savefile, "요우무_r1흑마법=%d\n", 요우무_r1.흑마법);
+	//요우무r2
 }
 //뉴우 영역
 

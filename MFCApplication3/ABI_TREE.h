@@ -24,6 +24,14 @@ public:
 	int point = 7;
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedCancel();
+	//검사용 변수
+	int TRE_a = 0;
+	int TRE_b = 0;
+	int TRE_c = 0;
+	int TRE_d = 0;
+	int TRE_e = 0;
+	int TRE_count = 0;
+	//
 	bool a_1 = FALSE;
 	bool a_2 = FALSE;
 	bool a_3 = FALSE;
@@ -149,51 +157,246 @@ public:
 	afx_msg void OnBnClickedButton31();
 	void enabling()
 	{
+		TRACE("COUNT:%d\n",TRE_count);
+		TRACE("A:%d\n",TRE_a);
+		TRACE("B:%d\n",TRE_b);
+		TRACE("C:%d\n",TRE_c);
+		TRACE("D:%d\n",TRE_d);
+		TRACE("E:%d\n",TRE_e);
+		if (TRE_count == 2)
+		{
+			if (TRE_a == 0)
+			{
+				백조의부름.EnableWindow(FALSE);
+				회복의삼지창.EnableWindow(FALSE);
+				신비로운반지.EnableWindow(FALSE);
+				치명적인탄환.EnableWindow(FALSE);
+				갈망의검.EnableWindow(FALSE);
+				투쟁갑옷무력화.EnableWindow(FALSE);
+				투쟁저항무력화.EnableWindow(FALSE);
+				투쟁타격용분.EnableWindow(FALSE);
+				투쟁마법용분.EnableWindow(FALSE);
+				집중사격.EnableWindow(FALSE);
+				무자비한연사.EnableWindow(FALSE);
+				환상적인공격.EnableWindow(FALSE);
+			}
+			if (TRE_b == 0)
+			{
+				밤의사냥꾼.EnableWindow(FALSE);
+				비겁한고블린.EnableWindow(FALSE);
+				깨물기.EnableWindow(FALSE);
+				이동의즐거움.EnableWindow(FALSE);
+				지배전투의기본.EnableWindow(FALSE);
+				지배푸른영기.EnableWindow(FALSE);
+				지배갑옷무력화.EnableWindow(FALSE);
+				지배저항무력화.EnableWindow(FALSE);
+				지배물리용분.EnableWindow(FALSE);
+				지배마법용분.EnableWindow(FALSE);
+				제우스의분노.EnableWindow(FALSE);
+				오디세우스의성검.EnableWindow(FALSE);
 
-		if (a_1 == TRUE)
-		{
-			신비로운반지.EnableWindow(TRUE);
-			치명적인탄환.EnableWindow(TRUE);
+			}
+			if (TRE_c == 0)
+			{
+				깨달음.EnableWindow(FALSE);
+				흑마법.EnableWindow(FALSE);
+				판다렌의화염작렬.EnableWindow(FALSE);
+				마법부스터.EnableWindow(FALSE);
+				마법전투의기본.EnableWindow(FALSE);
+				마법푸른영기.EnableWindow(FALSE);
+				마법갑옷무력화.EnableWindow(FALSE);
+				마법저항무력화.EnableWindow(FALSE);
+				마법물리용분.EnableWindow(FALSE);
+				마법마법용분.EnableWindow(FALSE);
+				대마법신비로운메테오.EnableWindow(FALSE);
+				마법펀치.EnableWindow(FALSE);
+			}
+			if (TRE_d == 0)
+			{
+				음과양의조화.EnableWindow(FALSE);
+				아레스의투구.EnableWindow(FALSE);
+				단단한벽.EnableWindow(FALSE);
+				마법의망토.EnableWindow(FALSE);
+				강인한체력.EnableWindow(FALSE);
+				신비의방패.EnableWindow(FALSE);
+				저항의방패.EnableWindow(FALSE);
+				긍지최후의방어.EnableWindow(FALSE);
+				곰발바닥.EnableWindow(FALSE);
+				토르의분노.EnableWindow(FALSE);
+			}
+			if (TRE_e == 0)
+			{
+				라식.EnableWindow(FALSE);
+				축복의장화.EnableWindow(FALSE);
+				고대신비의마법서.EnableWindow(FALSE);
+				산뜻한기분.EnableWindow(FALSE);
+				활력증진.EnableWindow(FALSE);
+				저돌적인공격방식.EnableWindow(FALSE);
+				신비한공격방식.EnableWindow(FALSE);
+				경험치사기꾼.EnableWindow(FALSE);
+				골드도둑.EnableWindow(FALSE);
+				축복최후의방어.EnableWindow(FALSE);
+				마법의점멸.EnableWindow(FALSE);
+				신의가호.EnableWindow(FALSE);
+			}
+			if ((TRE_a == 2) | (TRE_b == 2) | (TRE_c == 2) | (TRE_d == 2) | (TRE_e == 2))
+			{
+				if (TRE_a == 1)
+				{
+					if (a_1_1 == TRUE)
+					{
+						회복의삼지창.EnableWindow(FALSE);
+						신비로운반지.EnableWindow(FALSE);
+						치명적인탄환.EnableWindow(FALSE);
+					}
+					if (a_1_2 == TRUE)
+					{
+						백조의부름.EnableWindow(FALSE);
+						신비로운반지.EnableWindow(FALSE);
+						치명적인탄환.EnableWindow(FALSE);
+					}
+					if (a_2_1 == TRUE)
+					{
+						백조의부름.EnableWindow(FALSE);
+						회복의삼지창.EnableWindow(FALSE);
+						치명적인탄환.EnableWindow(FALSE);
+					}
+					if (a_2_2 == TRUE)
+					{
+						백조의부름.EnableWindow(FALSE);
+						회복의삼지창.EnableWindow(FALSE);
+						신비로운반지.EnableWindow(FALSE);
+					}
+				}
+				if (TRE_b == 1)
+				{
+					if (b_1_1 == TRUE)
+					{
+						비겁한고블린.EnableWindow(FALSE);
+						깨물기.EnableWindow(FALSE);
+						이동의즐거움.EnableWindow(FALSE);
+					}
+					if (b_1_2 == TRUE)
+					{
+						밤의사냥꾼.EnableWindow(FALSE);
+						깨물기.EnableWindow(FALSE);
+						이동의즐거움.EnableWindow(FALSE);
+					}
+					if (b_2_1 == TRUE)
+					{
+						밤의사냥꾼.EnableWindow(FALSE);
+						비겁한고블린.EnableWindow(FALSE);
+						이동의즐거움.EnableWindow(FALSE);
+					}
+					if (b_2_2 == TRUE)
+					{
+						밤의사냥꾼.EnableWindow(FALSE);
+						비겁한고블린.EnableWindow(FALSE);
+						깨물기.EnableWindow(FALSE);
+					}
+				}
+				if (TRE_c == 1)
+				{
+					if (c_1_1 == TRUE)
+					{
+						흑마법.EnableWindow(FALSE);
+						판다렌의화염작렬.EnableWindow(FALSE);
+						마법부스터.EnableWindow(FALSE);
+					}
+					if (c_1_2 == TRUE)
+					{
+						깨달음.EnableWindow(FALSE);
+						판다렌의화염작렬.EnableWindow(FALSE);
+						마법부스터.EnableWindow(FALSE);
+					}
+					if (c_2_1 == TRUE)
+					{
+						깨달음.EnableWindow(FALSE);
+						흑마법.EnableWindow(FALSE);
+						마법부스터.EnableWindow(FALSE);
+					}
+					if (c_2_2 == TRUE)
+					{
+						깨달음.EnableWindow(FALSE);
+						흑마법.EnableWindow(FALSE);
+						판다렌의화염작렬.EnableWindow(FALSE);
+					}
+				}
+				if (TRE_d == 1)
+				{
+					if (d_1_1 == TRUE)
+					{
+						아레스의투구.EnableWindow(FALSE);
+						단단한벽.EnableWindow(FALSE);
+						마법의망토.EnableWindow(FALSE);
+					}
+					if (d_1_2 == TRUE)
+					{
+						음과양의조화.EnableWindow(FALSE);
+						단단한벽.EnableWindow(FALSE);
+						마법의망토.EnableWindow(FALSE);
+					}
+					if (d_2_1 == TRUE)
+					{
+						음과양의조화.EnableWindow(FALSE);
+						아레스의투구.EnableWindow(FALSE);
+						마법의망토.EnableWindow(FALSE);
+					}
+					if (d_2_2 == TRUE)
+					{
+						음과양의조화.EnableWindow(FALSE);
+						아레스의투구.EnableWindow(FALSE);
+						단단한벽.EnableWindow(FALSE);
+					}
+				}
+				if (TRE_e == 1)
+				{
+					if (e_1_1 == TRUE)
+					{
+						축복의장화.EnableWindow(FALSE);
+						고대신비의마법서.EnableWindow(FALSE);
+						산뜻한기분.EnableWindow(FALSE);
+					}
+					if (e_1_2 == TRUE)
+					{
+						라식.EnableWindow(FALSE);
+						고대신비의마법서.EnableWindow(FALSE);
+						산뜻한기분.EnableWindow(FALSE);
+					}
+					if (e_2_1 == TRUE)
+					{
+						라식.EnableWindow(FALSE);
+						축복의장화.EnableWindow(FALSE);
+						산뜻한기분.EnableWindow(FALSE);
+					}
+					if (e_2_2 == TRUE)
+					{
+						라식.EnableWindow(FALSE);
+						축복의장화.EnableWindow(FALSE);
+						고대신비의마법서.EnableWindow(FALSE);
+					}
+				}
+			}
 		}
-		if (b_1 == TRUE)
-		{
-			깨물기.EnableWindow(TRUE);
-			이동의즐거움.EnableWindow(TRUE);
-		}
-		if (c_1 == TRUE)
-		{
-			판다렌의화염작렬.EnableWindow(TRUE);
-			마법부스터.EnableWindow(TRUE);
-		}
-		if (d_1 == TRUE)
-		{
-			단단한벽.EnableWindow(TRUE);
-			마법의망토.EnableWindow(TRUE);
-		}
-		if (e_1 == TRUE)
-		{
-			고대신비의마법서.EnableWindow(TRUE);
-			산뜻한기분.EnableWindow(TRUE);
-		}
-		if (a_2 == TRUE)
+		if ((a_2 == TRUE)&(a_1==TRUE))
 		{
 			갈망의검.EnableWindow(TRUE);
 		}
-		if (b_2 == TRUE)
+		if ((b_2 == TRUE) & (b_1 == TRUE))
 		{
 			지배전투의기본.EnableWindow(TRUE);
 			지배푸른영기.EnableWindow(TRUE);
 		}
-		if (c_2 == TRUE)
+		if ((c_2 == TRUE) & (c_1 == TRUE))
 		{
 			마법전투의기본.EnableWindow(TRUE);
 			마법푸른영기.EnableWindow(TRUE);
 		}
-		if (d_2 == TRUE)
+		if ((d_2 == TRUE) & (d_1 == TRUE))
 		{
 			강인한체력.EnableWindow(TRUE);
 		}
-		if (e_2 == TRUE)
+		if ((e_2 == TRUE) & (e_1 == TRUE))
 		{
 			활력증진.EnableWindow(TRUE);
 			저돌적인공격방식.EnableWindow(TRUE);
