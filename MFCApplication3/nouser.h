@@ -21,36 +21,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedOk();
-	char name[20];
-	int kill, death, assist;
-	int win;
-	int lose;
-	int chara;
-	void GetName(char* P_name)
-	{
-		
-		TRACE("TIME:COPY, P_name=%s \n", P_name);
-		strcpy(name,P_name);
-		TRACE("TIME:COPY, name=%s \n", name);
-	}
-	void GetStat(int P_kill, int P_death, int P_assist,BOOL wol)
-	{
-		kill = P_kill;
-		death = P_death;
-		assist = P_assist;
-		if (wol == TRUE)
-		{
-			win = 1;
-		}
-		else
-		{
-			lose = 1;
-		}
-		TRACE("kda = %d/%d/%d", P_kill, P_death, P_assist);
-	}
-	void rcvcha(int character)
-	{
-		chara = character;
-	}
 	afx_msg void OnBnClickedCancel();
+	BOOL OKNO = FALSE;
 };

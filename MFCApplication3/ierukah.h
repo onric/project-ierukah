@@ -7,7 +7,9 @@
 #define ÇöÀç¹öÁ¯ 1.0
 #define Ä³¸¯°³¼ö 60
 //dmdrldlt
-
+inline void finddata();
+inline void LINEFEED(int line);
+static void readLegcy();
 static FILE *savefile;
 //
 class chara
@@ -204,12 +206,14 @@ struct newdata//ÀÏ´Ü ÃÑÇÕµ¥ÀÌÅÍ¿¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ°¡ ¸ðÀÚ¶ó´Ï±ñ... chara¿¡ ³Ö±ä ¹¹Ç
 	int ÅÊÄ¿ = 0;//
 	int µô·¯ = 0;//
 	int Èú·¯ = 0;//
+	int ÇÏÇÁ = 0;
 	void init()
 	{
 			 ÁÖÆ÷Áö¼Ç = 0;//0=¹ÌÁ¤,1=µô,2=ÅÊ,3=Èú
 			 ÅÊÄ¿ = 0;//
 			 µô·¯ = 0;//
 			 Èú·¯ = 0;//
+			 ÇÏÇÁ = 0;
 	}
 };
 static newdata N_dataSTR;
@@ -564,6 +568,7 @@ struct dataSTR
 
 static void REF_chara()//chara¸¦ ÀÏ°ý ÃÊ±âÈ­ÇÕ´Ï´Ù
 {
+	N_dataSTR.init();
 	ÃÑÇÕ.init();
 	¿ä¿ì¹«_r1.init();
 	¿ä¿ì¹«_r2.init();
@@ -653,6 +658,7 @@ static void putsave(char* name)
 	fprintf(savefile, "ÅÊÄ¿=%d\n", N_dataSTR.ÅÊÄ¿);
 	fprintf(savefile, "µô·¯=%d\n", N_dataSTR.µô·¯);
 	fprintf(savefile, "Èú·¯=%d\n", N_dataSTR.Èú·¯);
+	fprintf(savefile, "ÇÏÇÁ=%d\n", N_dataSTR.ÇÏÇÁ);
 	fprintf(savefile, "ÃÑÇÕ¹éÁ¶ÀÇºÎ¸§=%d\n", ÃÑÇÕ.¹éÁ¶ÀÇºÎ¸§);
 	fprintf(savefile, "ÃÑÇÕÈ¸º¹ÀÇ»ïÁöÃ¢=%d\n", ÃÑÇÕ.È¸º¹ÀÇ»ïÁöÃ¢);
 	fprintf(savefile, "ÃÑÇÕ¹ãÀÇ»ç³É²Û=%d\n", ÃÑÇÕ.¹ãÀÇ»ç³É²Û);
@@ -4792,23 +4798,27 @@ static void putsave(char* name)
 }
 static void readsave(char* name)
 {
+	TRACE("½Å½ÄÀÐ±âÇÔ¼ö ÁøÀÔ\n");
 	int FEEDDATA = 0;
+	TRACE("TIME:ÀúÀå¼Ò¿ÀÇÂ\n");
 	savefile = fopen(name, "r");
 	if (savefile == NULL)
 	{
 		AfxMessageBox(_T("¿À·ù! ÀúÀå¼Ò ÀÐ±â¿¡ ½ÇÆÐÇß½À´Ï´Ù."));
 		return;
 	}
-
+	TRACE("TIME:ÀúÀå¼Ò¿ÀÇÂ,ÀúÀå¼ÒÀÖÀ½\n");
 	½Ç¼öÇü ÀÐÀº¹öÁ¯;
+	TRACE("TIME:ÀÐ±â½ÃÄý½º °¡µ¿\n");
 	fseek(savefile, 0, SEEK_SET);
 	finddata();
 	fscanf(savefile, "%lf", &ÀÐÀº¹öÁ¯);
 	if (ÀÐÀº¹öÁ¯ != ÇöÀç¹öÁ¯)
 	{
+		TRACE("TIME:¹öÁ¯ºÒÀÏÄ¡\n");
 		readLegcy();
 	}
-
+	TRACE("TIME:¹öÁ¯È®ÀÎ¿Ï·á\n");
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -4865,6 +4875,10 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &N_dataSTR.Èú·¯);
+	FEEDDATA++;
+	LINEFEED(FEEDDATA);
+	finddata();
+	fscanf(savefile, "%d", &N_dataSTR.ÇÏÇÁ);
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -5097,7 +5111,8 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÃÑÇÕ.½ÅÀÇ°¡È£);
-	//
+	TRACE("TIME:ÃÑÇÕºÎºÐ ¿Ï·á\n");
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -5370,7 +5385,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¿ä¿ì¹«_r1.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -5647,7 +5662,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¿ä¿ì¹«_r2.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -5920,7 +5935,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¿ä¿ì¹«_ÇÏÀÌºê¸®µå.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -6193,7 +6208,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &·¹ÀÌ¹«.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -6470,7 +6485,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &Ä¡¸£³ë.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -6747,7 +6762,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &»çÄí¾ß_µô·¯.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -7020,7 +7035,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &»çÄí¾ß_ÅÊÄ¿.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -7293,7 +7308,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÀÌÄí.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -7566,7 +7581,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¹«¶ó»ç_¹°¸®.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -7839,7 +7854,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¹«¶ó»ç_¸¶¹ý.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -8112,7 +8127,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¹«¶ó»ç_ÇÏÀÌºê¸®µå.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -8657,7 +8672,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &·¹ÀÌ¼¾_µô·¯.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -8930,7 +8945,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &·¹ÀÌ¼¾_ÇÏÀÌºê¸®µå.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -9203,7 +9218,8 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &·¹¹Ð¸®¾Æ.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
+	TRACE("TIME:°ËÃâ1\n");
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -9476,7 +9492,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÇÃ¶ûµµ¸£.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -9749,7 +9765,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÈæÈ­Ä¡¸£³ë.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -10022,7 +10038,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹ê½ºµå¿ä¿ì¹«_r1.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -10295,7 +10311,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹ê½ºµå¿ä¿ì¹«_r2.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -10568,7 +10584,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹ê½ºµå¿ä¿ì¹«_r3.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -10841,7 +10857,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¸¶¸®»ç_µô·¯.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -11114,7 +11130,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¸¶¸®»ç_Èú·¯.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -11387,7 +11403,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¸¶¸®»ç_ÇÏÀÌºê¸®µå.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -11660,7 +11676,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &À¯Ä«¸®.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -11933,7 +11949,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¸ðÄÚ¿ì.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -12206,7 +12222,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹êÆ®¸ð¹ÌÁö.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -12479,7 +12495,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÆÄÃò¸®.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -12752,7 +12768,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¿ìÃ÷È£.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -13025,7 +13041,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &½º¿ÍÄÚ.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -13569,7 +13585,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÅÙ½Ã_µô·¯.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -13842,7 +13858,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÅÙ½Ã_ÅÊÄ¿.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -14115,7 +14131,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹êÆ®Ä¡¸£³ë.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -14388,7 +14404,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÄÚ¸¶Ä¡.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -14661,7 +14677,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾Æ¾ß.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -14934,7 +14950,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹ê½ºµå¸ÞÀÌ¸°.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -15207,7 +15223,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &»ç³ª¿¡.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -15480,7 +15496,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &·¹Æ¼.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -15753,7 +15769,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &À¯À¯ÄÚ.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -16298,7 +16314,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &»çÅä¸®.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -16571,7 +16587,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¹ÙÄí·».½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -16844,7 +16860,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &Ä«±¸¾ß.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -17117,7 +17133,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¹ÌÄÚ.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -17390,7 +17406,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &´©¿¡.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -17663,7 +17679,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &½ºÀÌÄ«.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -17936,7 +17952,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &½ÃÅ°.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -18209,7 +18225,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &À¯Ä«.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -18482,7 +18498,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÈæÈ­¿ä¿ì¹«.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -18755,7 +18771,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾îµå¹êÆ®ÇÃ¶û.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -19028,7 +19044,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÇìÀÌ¸ÞÀÌ¸°.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -19301,7 +19317,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &È«¸ÞÀÌ¸°.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -19574,7 +19590,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÈæÈ­Ä«±¸¾ß.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -19847,7 +19863,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¸ð¹ÌÁö.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -20120,7 +20136,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÈæÈ­¹«¶ó»ç.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -20393,7 +20409,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &Á¶¿Â.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -20666,7 +20682,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &¾Ç¸¶·¹ÀÌ¹«.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -20939,7 +20955,7 @@ static void readsave(char* name)
 	LINEFEED(FEEDDATA);
 	finddata();
 	fscanf(savefile, "%d", &ÈæÈ­ÅÙ½Ã.½ÅÀÇ°¡È£);
-	//
+	TRACE("´Ü°èº¯È­\n");//
 
 	//
 	TRACE("¸ðµç µ¥ÀÌÅÍ¸¦ ÀÐ¾îµé¿´½À´Ï´Ù.\n");
