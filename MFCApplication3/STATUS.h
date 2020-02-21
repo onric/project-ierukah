@@ -22,12 +22,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	dataSTR aaa;
-	void GetStruct(dataSTR P_data)
-	{
-		memcpy(&aaa, &P_data, sizeof(struct dataSTR));
-		TRACE("TIME:GetStruct, test: %d\n ", P_data.test);
-		TRACE("TIME:Get, test: %d\n ", aaa.test);
-	}
 //	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnCbnSelchangeCombo1();
 	CComboBox listMENU;
