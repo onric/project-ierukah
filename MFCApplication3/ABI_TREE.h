@@ -1,8 +1,65 @@
 ﻿#pragma once
 
-
+static bool a_1_1;//백조
+static bool a_1_2;//삼지창
+static bool a_2_1;//반지
+static bool a_2_2;//탄환
+static bool a_3_1;//갈망의검
+static bool a_4_1;//갑옷무력화(투쟁)
+static bool a_4_2;//저항무력화(투쟁)
+static bool a_5_1;//물리 용분(투쟁)
+static bool a_5_2;//마법용분(투쟁)
+static bool a_6_1;//집중사격
+static bool a_6_2;//연사
+static bool a_6_3;//환공
+static bool b_1_1;//밤사
+static bool b_1_2;//고블린
+static bool b_2_1;//깨물기
+static bool b_2_2;//이동의즐거움
+static bool b_3_1;//전투의기본(지배)
+static bool b_3_2;//푸른영기(지배)
+static bool b_4_1;//갑옷무력화(지배)
+static bool b_4_2;//저항무력화(지배)
+static bool b_5_1;//물리용분(지배)
+static bool b_5_2;//마법용분(지배)
+static bool b_6_1;//제우스
+static bool b_6_2;//성검
+static bool c_1_1;//깨달음
+static bool c_1_2;//흑마법
+static bool c_2_1;//판다렌
+static bool c_2_2;//마법부스터
+static bool c_3_1;//전투의기본(마법)
+static bool c_3_2;//푸른영기(마법)
+static bool c_4_1;//갑옷무력화(마법)
+static bool c_4_2;//저항무력화(마법)
+static bool c_5_1;//물리용분(마법)
+static bool c_5_2;//마법용분(마법)
+static bool c_6_1;//메테오
+static bool c_6_2;//마펀
+static bool d_1_1;//음양조화
+static bool d_1_2;//아레스
+static bool d_2_1;//단단벽
+static bool d_2_2;//마법망토
+static bool d_3_1;//강인체력
+static bool d_4_1;//신비방패
+static bool d_4_2;//저항방패gh
+static bool d_5_1;//최후방어
+static bool d_6_1;//곰발
+static bool d_6_2;//토르의분노
+static bool e_1_1;//라식
+static bool e_1_2;//장화
+static bool e_2_1;//마법서
+static bool e_2_2;//기분
+static bool e_3_1;//활력
+static bool e_3_2;//저돌적공격
+static bool e_3_3;//신비공격
+static bool e_4_1;//경사
+static bool e_4_2;//골드도둑
+static bool e_5_1;//최후방어
+static bool e_6_1;//마법점멸
+static bool e_6_2;//가호
 // ABI_TREE 대화 상자
-
+CString point_buf;
 class ABI_TREE : public CDialog
 {
 	DECLARE_DYNAMIC(ABI_TREE)
@@ -61,67 +118,11 @@ public:
 	//1,2,3,4,5..=줄 개수
 	// 이상의 변수는 특성을 찍을수 있는 요구조건을 구별하기 위함임
 
+	
 
 	//이하는 특성의 선택여부임
 	//앞 두자리는 위에거랑 같음/1=좌,2=우
-	bool a_1_1 = FALSE;//백조
-	bool a_1_2 = FALSE;//삼지창
-	bool a_2_1 = FALSE;//반지
-	bool a_2_2 = FALSE;//탄환
-	bool a_3_1 = FALSE;//갈망의검
-	bool a_4_1 = FALSE;//갑옷무력화(투쟁)
-	bool a_4_2 = FALSE;//저항무력화(투쟁)
-	bool a_5_1 = FALSE;//물리 용분(투쟁)
-	bool a_5_2 = FALSE;//마법용분(투쟁)
-	bool a_6_1 = FALSE;//집중사격
-	bool a_6_2 = FALSE;//연사
-	bool a_6_3 = FALSE;//환공
-	bool b_1_1 = FALSE;//밤사
-	bool b_1_2 = FALSE;//고블린
-	bool b_2_1 = FALSE;//깨물기
-	bool b_2_2 = FALSE;//이동의즐거움
-	bool b_3_1 = FALSE;//전투의기본(지배)
-	bool b_3_2 = FALSE;//푸른영기(지배)
-	bool b_4_1 = FALSE;//갑옷무력화(지배)
-	bool b_4_2 = FALSE;//저항무력화(지배)
-	bool b_5_1 = FALSE;//물리용분(지배)
-	bool b_5_2 = FALSE;//마법용분(지배)
-	bool b_6_1 = FALSE;//제우스
-	bool b_6_2 = FALSE;//성검
-	bool c_1_1 = FALSE;//깨달음
-	bool c_1_2 = FALSE;//흑마법
-	bool c_2_1 = FALSE;//판다렌
-	bool c_2_2 = FALSE;//마법부스터
-	bool c_3_1 = FALSE;//전투의기본(마법)
-	bool c_3_2 = FALSE;//푸른영기(마법)
-	bool c_4_1 = FALSE;//갑옷무력화(마법)
-	bool c_4_2 = FALSE;//저항무력화(마법)
-	bool c_5_1 = FALSE;//물리용분(마법)
-	bool c_5_2 = FALSE;//마법용분(마법)
-	bool c_6_1 = FALSE;//메테오
-	bool c_6_2 = FALSE;//마펀
-	bool d_1_1 = FALSE;//음양조화
-	bool d_1_2 = FALSE;//아레스
-	bool d_2_1 = FALSE;//단단벽
-	bool d_2_2 = FALSE;//마법망토
-	bool d_3_1 = FALSE;//강인체력
-	bool d_4_1 = FALSE;//신비방패
-	bool d_4_2 = FALSE;//저항방패
-	bool d_5_1 = FALSE;//최후방어
-	bool d_6_1 = FALSE;//곰발
-	bool d_6_2 = FALSE;//토르의분노
-	bool e_1_1 = FALSE;//라식
-	bool e_1_2 = FALSE;//장화
-	bool e_2_1 = FALSE;//마법서
-	bool e_2_2 = FALSE;//기분
-	bool e_3_1 = FALSE;//활력
-	bool e_3_2 = FALSE;//저돌적공격
-	bool e_3_3 = FALSE;//신비공격
-	bool e_4_1 = FALSE;//경사
-	bool e_4_2 = FALSE;//골드도둑
-	bool e_5_1 = FALSE;//최후방어
-	bool e_6_1 = FALSE;//마법점멸
-	bool e_6_2 = FALSE;//가호
+	
 	afx_msg void OnBnClickedButton32();
 	afx_msg void OnBnClickedButton1();
 	CStatic dis_point;
@@ -562,4 +563,182 @@ public:
 	afx_msg void OnBnClickedButton57();
 	afx_msg void OnBnClickedButton58();
 	afx_msg void OnBnClickedReset();
+	void reset()
+	{
+		TRE_a = 0;
+		TRE_b = 0;
+		TRE_c = 0;
+		TRE_d = 0;
+		TRE_e = 0;
+		TRE_count = 0;
+		a_1 = FALSE;
+		a_2 = FALSE;
+		a_3 = FALSE;
+		a_4 = FALSE;
+		a_5 = FALSE;
+		b_1 = FALSE;
+		b_2 = FALSE;
+		b_3 = FALSE;
+		b_4 = FALSE;
+		b_5 = FALSE;
+		c_1 = FALSE;
+		c_2 = FALSE;
+		c_3 = FALSE;
+		c_4 = FALSE;
+		c_5 = FALSE;
+		d_1 = FALSE;
+		d_2 = FALSE;
+		d_3 = FALSE;
+		d_4 = FALSE;
+		d_5 = FALSE;
+		e_1 = FALSE;
+		e_2 = FALSE;
+		e_3 = FALSE;
+		e_4 = FALSE;
+		e_5 = FALSE;
+		a_1_1 = FALSE;//백조
+		a_1_2 = FALSE;//삼지창
+		a_2_1 = FALSE;//반지
+		a_2_2 = FALSE;//탄환
+		a_3_1 = FALSE;//갈망의검
+		a_4_1 = FALSE;//갑옷무력화(투쟁)
+		a_4_2 = FALSE;//저항무력화(투쟁)
+		a_5_1 = FALSE;//물리 용분(투쟁)
+		a_5_2 = FALSE;//마법용분(투쟁)
+		a_6_1 = FALSE;//집중사격
+		a_6_2 = FALSE;//연사
+		a_6_3 = FALSE;//환공
+		b_1_1 = FALSE;//밤사
+		b_1_2 = FALSE;//고블린
+		b_2_1 = FALSE;//깨물기
+		b_2_2 = FALSE;//이동의즐거움
+		b_3_1 = FALSE;//전투의기본(지배)
+		b_3_2 = FALSE;//푸른영기(지배)
+		b_4_1 = FALSE;//갑옷무력화(지배)
+		b_4_2 = FALSE;//저항무력화(지배)
+		b_5_1 = FALSE;//물리용분(지배)
+		b_5_2 = FALSE;//마법용분(지배)
+		b_6_1 = FALSE;//제우스
+		b_6_2 = FALSE;//성검
+		c_1_1 = FALSE;//깨달음
+		c_1_2 = FALSE;//흑마법
+		c_2_1 = FALSE;//판다렌
+		c_2_2 = FALSE;//마법부스터
+		c_3_1 = FALSE;//전투의기본(마법)
+		c_3_2 = FALSE;//푸른영기(마법)
+		c_4_1 = FALSE;//갑옷무력화(마법)
+		c_4_2 = FALSE;//저항무력화(마법)
+		c_5_1 = FALSE;//물리용분(마법)
+		c_5_2 = FALSE;//마법용분(마법)
+		c_6_1 = FALSE;//메테오
+		c_6_2 = FALSE;//마펀
+		d_1_1 = FALSE;//음양조화
+		d_1_2 = FALSE;//아레스
+		d_2_1 = FALSE;//단단벽
+		d_2_2 = FALSE;//마법망토
+		d_3_1 = FALSE;//강인체력
+		d_4_1 = FALSE;//신비방패
+		d_4_2 = FALSE;//저항방패
+		d_5_1 = FALSE;//최후방어
+		d_6_1 = FALSE;//곰발
+		d_6_2 = FALSE;//토르의분노
+		e_1_1 = FALSE;//라식
+		e_1_2 = FALSE;//장화
+		e_2_1 = FALSE;//마법서
+		e_2_2 = FALSE;//기분
+		e_3_1 = FALSE;//활력
+		e_3_2 = FALSE;//저돌적공격
+		e_3_3 = FALSE;//신비공격
+		e_4_1 = FALSE;//경사
+		e_4_2 = FALSE;//골드도둑
+		e_5_1 = FALSE;//최후방어
+		e_6_1 = FALSE;//마법점멸
+		e_6_2 = FALSE;//가호
+		point = 7;
+		point_buf.Format(_T("%d"), point);
+		dis_point.SetWindowTextW(point_buf);
+		//1라인 재활성화
+		백조의부름.EnableWindow(TRUE);
+		회복의삼지창.EnableWindow(TRUE);
+		밤의사냥꾼.EnableWindow(TRUE);
+		비겁한고블린.EnableWindow(TRUE);
+		깨달음.EnableWindow(TRUE);
+		흑마법.EnableWindow(TRUE);
+		음과양의조화.EnableWindow(TRUE);
+		아레스의투구.EnableWindow(TRUE);
+		라식.EnableWindow(TRUE);
+		축복의장화.EnableWindow(TRUE);
+		//비활성화
+		신비로운반지.EnableWindow(TRUE);
+		치명적인탄환.EnableWindow(TRUE);
+
+		깨물기.EnableWindow(TRUE);
+		이동의즐거움.EnableWindow(TRUE);
+
+		판다렌의화염작렬.EnableWindow(TRUE);
+		마법부스터.EnableWindow(TRUE);
+
+		단단한벽.EnableWindow(TRUE);
+		마법의망토.EnableWindow(TRUE);
+
+		고대신비의마법서.EnableWindow(TRUE);
+		산뜻한기분.EnableWindow(TRUE);
+
+		갈망의검.EnableWindow(FALSE);
+
+		지배전투의기본.EnableWindow(FALSE);
+		지배푸른영기.EnableWindow(FALSE);
+
+		마법전투의기본.EnableWindow(FALSE);
+		마법푸른영기.EnableWindow(FALSE);
+
+		강인한체력.EnableWindow(FALSE);
+
+		활력증진.EnableWindow(FALSE);
+		저돌적인공격방식.EnableWindow(FALSE);
+		신비한공격방식.EnableWindow(FALSE);
+
+		투쟁갑옷무력화.EnableWindow(FALSE);
+		투쟁저항무력화.EnableWindow(FALSE);
+
+		지배갑옷무력화.EnableWindow(FALSE);
+		지배저항무력화.EnableWindow(FALSE);
+
+		마법갑옷무력화.EnableWindow(FALSE);
+		마법저항무력화.EnableWindow(FALSE);
+
+		신비의방패.EnableWindow(FALSE);
+		저항의방패.EnableWindow(FALSE);
+
+		경험치사기꾼.EnableWindow(FALSE);
+		골드도둑.EnableWindow(FALSE);
+
+		투쟁타격용분.EnableWindow(FALSE);
+		투쟁마법용분.EnableWindow(FALSE);
+
+		지배물리용분.EnableWindow(FALSE);
+		지배마법용분.EnableWindow(FALSE);
+
+		마법물리용분.EnableWindow(FALSE);
+		마법마법용분.EnableWindow(FALSE);
+
+		긍지최후의방어.EnableWindow(FALSE);
+
+		축복최후의방어.EnableWindow(FALSE);
+
+		집중사격.EnableWindow(FALSE);
+		무자비한연사.EnableWindow(FALSE);
+		환상적인공격.EnableWindow(FALSE);
+		제우스의분노.EnableWindow(FALSE);
+		오디세우스의성검.EnableWindow(FALSE);
+
+		대마법신비로운메테오.EnableWindow(FALSE);
+		마법펀치.EnableWindow(FALSE);
+
+		곰발바닥.EnableWindow(FALSE);
+		토르의분노.EnableWindow(FALSE);
+
+		마법의점멸.EnableWindow(FALSE);
+		신의가호.EnableWindow(FALSE);
+	}
 };

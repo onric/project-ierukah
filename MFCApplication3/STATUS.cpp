@@ -53,29 +53,29 @@ void STATUS::OnCbnSelchangeCombo1()
 		char* position =NULL;
 		char* type=NULL;
 		TRACE("TIME:COMBO, dummy:%d\n", dummy);
-		int kda = (aaa.킬 + aaa.어시스트) / aaa.데스;
-		if (aaa.주포지션 == 1)\
+		int kda = (총합.킬 + 총합.어시스트) / 총합.데스;
+		if (N_dataSTR.주포지션 == 1)\
 		{
 			//일단 임시로..
 			DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : 딜러\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n비율 : %d"), aaa.게임횟수, aaa.승률, aaa.승수, aaa.패수, aaa.딜러, aaa.힐러, aaa.탱커, aaa.킬, aaa.데스, aaa.어시스트, kda);
 			TRACE("딜러\n");
 			//position = ("딜러");
 		}
-		else if (aaa.주포지션 == 2)
+		else if (N_dataSTR.주포지션 == 2)
 		{
 			DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : 탱커\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n비율 : %d"), aaa.게임횟수, aaa.승률, aaa.승수, aaa.패수, aaa.딜러, aaa.힐러, aaa.탱커, aaa.킬, aaa.데스, aaa.어시스트, kda);
 
 			TRACE("탱커\n");
 			//position = ("탱커");
 		}
-		else if (aaa.주포지션 == 3)
+		else if (N_dataSTR.주포지션 == 3)
 		{
 			DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : 힐러\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n비율 : %d"), aaa.게임횟수, aaa.승률, aaa.승수, aaa.패수, aaa.딜러, aaa.힐러, aaa.탱커, aaa.킬, aaa.데스, aaa.어시스트, kda);
 
 			TRACE("힐러\n");
 			//position = ("힐러");
 		}
-		else if (aaa.주포지션 == 0)
+		else if (N_dataSTR.주포지션 == 0)
 		{
 			DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : 아직 정해지지 않음\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n비율 : %d"), aaa.게임횟수, aaa.승률, aaa.승수, aaa.패수, aaa.딜러, aaa.힐러, aaa.탱커, aaa.킬, aaa.데스, aaa.어시스트, kda);
 
