@@ -6,6 +6,8 @@
 #define 실수형 double
 #define 현재버젼 1.0
 #define 캐릭개수 60
+
+
 //dmdrldlt
 inline void finddata();
 inline void LINEFEED(int line);
@@ -88,125 +90,97 @@ class chara
 		정수형 마법의점멸 = 0;
 		정수형 신의가호 = 0;
 		//함수를 선언합니다.
-		void ABILITY()
+		void ABILITY(int abi[60])
 		{
-			if (a_1_1 == TRUE) { 백조의부름++; }
-			if (a_1_2 == TRUE) { 회복의삼지창++; }
-			if (a_2_1 == TRUE) { 신비로운반지++; }
-			if (a_2_2 == TRUE) { 치명적인탄환++; }
-			if (a_3_1 == TRUE) { 갈망의검++; }
-			if (a_4_1 == TRUE) { 투쟁갑옷무력화++; }
-			if (a_4_2 == TRUE) { 투쟁저항무력화++; }
-			if (a_5_1 == TRUE) { 투쟁타격용분++; }
-			if (a_5_2 == TRUE) { 투쟁마법용분++; }
-			if (a_6_1 == TRUE) { 집중사격++; }
-			if (a_6_2 == TRUE) { 무자비한연사++; }
-			if (a_6_3 == TRUE) { 환상적인공격++; }
-			if (b_1_1 == TRUE) { 밤의사냥꾼++; }
-			if (b_1_2 == TRUE) { 비겁한고블린++; }
-			if (b_2_1 == TRUE) { 깨물기++; }
-			if (b_2_2 == TRUE) { 이동의즐거움++; }
-			if (b_3_1 == TRUE) { 지배전투의기본++; }
-			if (b_3_2 == TRUE) { 지배푸른영기++; }
-			if (b_4_1 == TRUE) { 지배갑옷무력화++; }
-			if (b_4_2 == TRUE) { 지배저항무력화++; }
-			if (b_5_1 == TRUE) { 지배물리용분++; }
-			if (b_5_2 == TRUE) { 지배마법용분++; }
-			if (b_6_1 == TRUE) { 제우스의분노++; }
-			if (b_6_2 == TRUE) { 오디세우스의성검++; }
-			if (c_1_1 == TRUE) { 깨달음++; }
-			if (c_1_2 == TRUE) { 흑마법++; }
-			if (c_2_1 == TRUE) { 판다렌의화염작렬++; }
-			if (c_2_2 == TRUE) { 마법부스터++; }
-			if (c_3_1 == TRUE) { 마법전투의기본++; }
-			if (c_3_2 == TRUE) { 마법푸른영기++; }
-			if (c_4_1 == TRUE) { 마법갑옷무력화++; }
-			if (c_4_2 == TRUE) { 마법저항무력화++; }
-			if (c_5_1 == TRUE) { 마법물리용분++; }
-			if (c_5_2 == TRUE) { 마법마법용분++; }
-			if (c_6_1 == TRUE) { 대마법신비로운메테오++; }
-			if (c_6_2 == TRUE) { 마법펀치++; }
-			if (d_1_1 == TRUE) { 음과양의조화++; }
-			if (d_1_2 == TRUE) { 아레스의투구++; }
-			if (d_2_1 == TRUE) { 단단한벽++; }
-			if (d_2_2 == TRUE) { 마법의망토++; }
-			if (d_3_1 == TRUE) { 강인한체력++; }
-			if (d_4_1 == TRUE) { 신비의방패++; }
-			if (d_4_2 == TRUE) { 저항의방패++; }
-			if (d_5_1 == TRUE) { 긍지최후의방어++; }
-			if (d_6_1 == TRUE) { 곰발바닥++; }
-			if (d_6_2 == TRUE) { 토르의분노++; }
-			if (e_1_1 == TRUE) { 라식++; }
-			if (e_1_2 == TRUE) { 축복의장화++; }
-			if (e_2_1 == TRUE) { 고대신비의마법서++; }
-			if (e_2_2 == TRUE) { 산뜻한기분++; }
-			if (e_3_1 == TRUE) { 활력증진++; }
-			if (e_3_2 == TRUE) { 저돌적인공격방식++; }
-			if (e_3_3 == TRUE) { 신비한공격방식++; }
-			if (e_4_1 == TRUE) { 경험치사기꾼++; }
-			if (e_4_2 == TRUE) { 골드도둑++; }
-			if (e_5_1 == TRUE) { 축복최후의방어++; }
-			if (e_6_1 == TRUE) { 마법의점멸++; }
-			if (e_6_2 == TRUE) { 신의가호++; }
+			int i = 0;
+			if (abi[i] == 1) { 백조의부름++; }
+			i++;
+			if (abi[i] == 1) { 회복의삼지창++; }
+			i++;
+			if (abi[i] == 1) { 신비로운반지++; }
+			i++;
+			if ( abi[i] == 1) { 치명적인탄환++; }
+			i++;
+			if ( abi[i] == 1) { 갈망의검++; }
+			i++;
+			if ( abi[i] == 1) { 투쟁갑옷무력화++; }
+			i++;
+			if ( abi[i] == 1) { 투쟁저항무력화++; }
+			i++;
+			if ( abi[i] == 1) { 투쟁타격용분++; }
+			i++;
+			if ( abi[i] == 1) { 투쟁마법용분++; }
+			i++;
+			if ( abi[i] == 1) { 집중사격++; }
+			i++;
+			if ( abi[i] == 1) { 무자비한연사++; }
+			i++;
+			if ( abi[i] == 1) { 환상적인공격++; }
+			i++;
+			if ( abi[i] == 1) { 밤의사냥꾼++; }
+			i++;
+			if ( abi[i] == 1) { 비겁한고블린++; }
+			i++;
+			if ( abi[i] == 1) { 깨물기++; }
+			i++;
+			if ( abi[i] == 1) { 이동의즐거움++; }
+			i++;
+			if ( abi[i] == 1) { 지배전투의기본++; }
+			i++;
+			if ( abi[i] == 1) { 지배푸른영기++; }
+			i++;
+			if ( abi[i] == 1) { 지배갑옷무력화++; }
+			i++;
+			if ( abi[i] == 1) { 지배저항무력화++; }
+			i++;
+			if ( abi[i] == 1) { 지배물리용분++; }
+			i++;
+			if ( abi[i] == 1) { 지배마법용분++; }
+			i++;
+			if ( abi[i] == 1) { 제우스의분노++; }
+			i++;
+			if ( abi[i] == 1) { 오디세우스의성검++; }
+			i++;
+			if ( abi[i] == 1) { 깨달음++; }
+			i++;
+			if ( abi[i] == 1) { 흑마법++; }
+			i++;
+			if ( abi[i] == 1) { 판다렌의화염작렬++; }
+			i++;
+			if ( abi[i] == 1) { 마법부스터++; }i++;
+			if ( abi[i] == 1) { 마법전투의기본++; }i++;
+			if ( abi[i] == 1) { 마법푸른영기++; }i++;
+			if ( abi[i] == 1) { 마법갑옷무력화++; }i++;
+			if ( abi[i] == 1) { 마법저항무력화++; }i++;
+			if ( abi[i] == 1) { 마법물리용분++; }i++;
+			if ( abi[i] == 1) { 마법마법용분++; }i++;
+			if ( abi[i] == 1) { 대마법신비로운메테오++; }i++;
+			if ( abi[i] == 1) { 마법펀치++; }i++;
+			if ( abi[i] == 1) { 음과양의조화++; }i++;
+			if ( abi[i] == 1) { 아레스의투구++; }i++;
+			if ( abi[i] == 1) { 단단한벽++; }i++;
+			if ( abi[i] == 1) { 마법의망토++; }i++;
+			if ( abi[i] == 1) { 강인한체력++; }i++;
+			if ( abi[i] == 1) { 신비의방패++; }i++;
+			if ( abi[i] == 1) { 저항의방패++; }i++;
+			if ( abi[i] == 1) { 긍지최후의방어++; }i++;
+			if ( abi[i] == 1) { 곰발바닥++; }i++;
+			if ( abi[i] == 1) { 토르의분노++; }i++;
+			if ( abi[i] == 1) { 라식++; }i++;
+			if ( abi[i] == 1) { 축복의장화++; }i++;
+			if ( abi[i] == 1) { 고대신비의마법서++; }i++;
+			if ( abi[i] == 1) { 산뜻한기분++; }i++;
+			if ( abi[i] == 1) { 활력증진++; }i++;
+			if ( abi[i] == 1) { 저돌적인공격방식++; }i++;
+			if ( abi[i] == 1) { 신비한공격방식++; }i++;
+			if ( abi[i] == 1) { 경험치사기꾼++; }i++;
+			if ( abi[i] == 1) { 골드도둑++; }i++;
+			if ( abi[i] == 1) { 축복최후의방어++; }i++;
+			if ( abi[i] == 1) { 마법의점멸++; }i++;
+			if ( abi[i] == 1) { 신의가호++; }i++;
 			//사용후엔 제대로 처리하자
-			a_1_1 = FALSE;//백조
-			a_1_2 = FALSE;//삼지창
-			a_2_1 = FALSE;//반지
-			a_2_2 = FALSE;//탄환
-			a_3_1 = FALSE;//갈망의검
-			a_4_1 = FALSE;//갑옷무력화(투쟁)
-			a_4_2 = FALSE;//저항무력화(투쟁)
-			a_5_1 = FALSE;//물리 용분(투쟁)
-			a_5_2 = FALSE;//마법용분(투쟁)
-			a_6_1 = FALSE;//집중사격
-			a_6_2 = FALSE;//연사
-			a_6_3 = FALSE;//환공
-			b_1_1 = FALSE;//밤사
-			b_1_2 = FALSE;//고블린
-			b_2_1 = FALSE;//깨물기
-			b_2_2 = FALSE;//이동의즐거움
-			b_3_1 = FALSE;//전투의기본(지배)
-			b_3_2 = FALSE;//푸른영기(지배)
-			b_4_1 = FALSE;//갑옷무력화(지배)
-			b_4_2 = FALSE;//저항무력화(지배)
-			b_5_1 = FALSE;//물리용분(지배)
-			b_5_2 = FALSE;//마법용분(지배)
-			b_6_1 = FALSE;//제우스
-			b_6_2 = FALSE;//성검
-			c_1_1 = FALSE;//깨달음
-			c_1_2 = FALSE;//흑마법
-			c_2_1 = FALSE;//판다렌
-			c_2_2 = FALSE;//마법부스터
-			c_3_1 = FALSE;//전투의기본(마법)
-			c_3_2 = FALSE;//푸른영기(마법)
-			c_4_1 = FALSE;//갑옷무력화(마법)
-			c_4_2 = FALSE;//저항무력화(마법)
-			c_5_1 = FALSE;//물리용분(마법)
-			c_5_2 = FALSE;//마법용분(마법)
-			c_6_1 = FALSE;//메테오
-			c_6_2 = FALSE;//마펀
-			d_1_1 = FALSE;//음양조화
-			d_1_2 = FALSE;//아레스
-			d_2_1 = FALSE;//단단벽
-			d_2_2 = FALSE;//마법망토
-			d_3_1 = FALSE;//강인체력
-			d_4_1 = FALSE;//신비방패
-			d_4_2 = FALSE;//저항방패
-			d_5_1 = FALSE;//최후방어
-			d_6_1 = FALSE;//곰발
-			d_6_2 = FALSE;//토르의분노
-			e_1_1 = FALSE;//라식
-			e_1_2 = FALSE;//장화
-			e_2_1 = FALSE;//마법서
-			e_2_2 = FALSE;//기분
-			e_3_1 = FALSE;//활력
-			e_3_2 = FALSE;//저돌적공격
-			e_3_3 = FALSE;//신비공격
-			e_4_1 = FALSE;//경사
-			e_4_2 = FALSE;//골드도둑
-			e_5_1 = FALSE;//최후방어
-			e_6_1 = FALSE;//마법점멸
-			e_6_2 = FALSE;//가호
+			abi = {};
+			i = 0;
 		}
 		void input(int kill, int death, int assist)//kda를 입력받습니다.
 		{
@@ -318,6 +292,18 @@ class chara
 			 토르의분노 = 0;
 			 마법의점멸 = 0;
 			 신의가호 = 0;
+		}
+		double getKDA()
+		{
+			if (데스 == 0)
+			{
+				return 0;
+			}
+			else
+			{
+				double kda = (킬 + 어시스트) / 데스;
+				return kda;
+			}
 		}
 };
 struct newdata//일단 총합데이터에 필요한 데이터가 모자라니깐... chara에 넣긴 뭐하고
@@ -4916,29 +4902,33 @@ static void putsave(char* name)
 	fclose(savefile);
 
 }
-static void readsave(char* name)
+static int readsave(char* name)
 {
 	TRACE("신식읽기함수 진입\n");
 	int FEEDDATA = 0;
-	TRACE("TIME:저장소오픈\n");
-	savefile = fopen(name, "r");
+	TRACE("TIME:저장소오픈 : %s\n",name);
+	savefile = fopen(name, "r+");
 	if (savefile == NULL)
 	{
+		TRACE("열기 오류\n");
 		AfxMessageBox(_T("오류! 저장소 읽기에 실패했습니다."));
-		return;
+		return -1;
 	}
 	TRACE("TIME:저장소오픈,저장소있음\n");
-	실수형 읽은버젼;
+	실수형 읽은버젼 =0;
 	TRACE("TIME:읽기시퀸스 가동\n");
 	fseek(savefile, 0, SEEK_SET);
 	finddata();
 	fscanf(savefile, "%lf", &읽은버젼);
 	if (읽은버젼 != 현재버젼)
 	{
-		TRACE("TIME:버젼불일치\n");
+		TRACE("TIME:버젼불일치 : %lf != %lf\n",읽은버젼,현재버젼);
 		readLegcy();
+		return -1;
 	}
-	TRACE("TIME:버젼확인완료\n");
+	
+	TRACE("TIME:버젼확인완료 : %lf\n",읽은버젼);
+	읽은버젼 = 0;
 	FEEDDATA++;
 	LINEFEED(FEEDDATA);
 	finddata();
@@ -21085,12 +21075,14 @@ static void readsave(char* name)
 //레거시 영역(구조체 활용)
 inline void finddata()//
 {
+	
 	bool doen = false;
 	for (; doen == false;)
 	{
 		char buf11 = fgetc(savefile);
 		if (buf11 == '=')
 		{
+			TRACE("탐색 : %s\n", buf11);
 			doen = true;
 		}
 	}

@@ -26,4 +26,5 @@ public:
 	afx_msg void OnCbnSelchangeCombo1();
 	CComboBox listMENU;
 	CStatic DISPLAY;
+	afx_msg void OnBnClickedButton1();
 };

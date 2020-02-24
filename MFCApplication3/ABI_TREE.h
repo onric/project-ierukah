@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+static int abi[60];
 static bool a_1_1;//백조
 static bool a_1_2;//삼지창
 static bool a_2_1;//반지
@@ -42,7 +43,7 @@ static bool d_2_1;//단단벽
 static bool d_2_2;//마법망토
 static bool d_3_1;//강인체력
 static bool d_4_1;//신비방패
-static bool d_4_2;//저항방패gh
+static bool d_4_2;//저항방패
 static bool d_5_1;//최후방어
 static bool d_6_1;//곰발
 static bool d_6_2;//토르의분노
@@ -59,7 +60,7 @@ static bool e_5_1;//최후방어
 static bool e_6_1;//마법점멸
 static bool e_6_2;//가호
 // ABI_TREE 대화 상자
-CString point_buf;
+
 class ABI_TREE : public CDialog
 {
 	DECLARE_DYNAMIC(ABI_TREE)
@@ -78,6 +79,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	CString point_buf;
 	int point = 7;
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedCancel();
@@ -597,63 +599,121 @@ public:
 		e_4 = FALSE;
 		e_5 = FALSE;
 		a_1_1 = FALSE;//백조
+
 		a_1_2 = FALSE;//삼지창
+
 		a_2_1 = FALSE;//반지
+
 		a_2_2 = FALSE;//탄환
+
 		a_3_1 = FALSE;//갈망의검
+
 		a_4_1 = FALSE;//갑옷무력화(투쟁)
+
 		a_4_2 = FALSE;//저항무력화(투쟁)
+
 		a_5_1 = FALSE;//물리 용분(투쟁)
+
 		a_5_2 = FALSE;//마법용분(투쟁)
+
 		a_6_1 = FALSE;//집중사격
+
 		a_6_2 = FALSE;//연사
+
 		a_6_3 = FALSE;//환공
+
 		b_1_1 = FALSE;//밤사
+
 		b_1_2 = FALSE;//고블린
+
 		b_2_1 = FALSE;//깨물기
+
 		b_2_2 = FALSE;//이동의즐거움
+
 		b_3_1 = FALSE;//전투의기본(지배)
+
 		b_3_2 = FALSE;//푸른영기(지배)
+
 		b_4_1 = FALSE;//갑옷무력화(지배)
+
 		b_4_2 = FALSE;//저항무력화(지배)
+
 		b_5_1 = FALSE;//물리용분(지배)
+
 		b_5_2 = FALSE;//마법용분(지배)
+
 		b_6_1 = FALSE;//제우스
+
 		b_6_2 = FALSE;//성검
+
 		c_1_1 = FALSE;//깨달음
+
 		c_1_2 = FALSE;//흑마법
+
 		c_2_1 = FALSE;//판다렌
+
 		c_2_2 = FALSE;//마법부스터
+
 		c_3_1 = FALSE;//전투의기본(마법)
+
 		c_3_2 = FALSE;//푸른영기(마법)
+
 		c_4_1 = FALSE;//갑옷무력화(마법)
+
 		c_4_2 = FALSE;//저항무력화(마법)
+
 		c_5_1 = FALSE;//물리용분(마법)
+
 		c_5_2 = FALSE;//마법용분(마법)
+
 		c_6_1 = FALSE;//메테오
+
 		c_6_2 = FALSE;//마펀
+
 		d_1_1 = FALSE;//음양조화
+
 		d_1_2 = FALSE;//아레스
+
 		d_2_1 = FALSE;//단단벽
+
 		d_2_2 = FALSE;//마법망토
+
 		d_3_1 = FALSE;//강인체력
+
 		d_4_1 = FALSE;//신비방패
+
 		d_4_2 = FALSE;//저항방패
+
 		d_5_1 = FALSE;//최후방어
+
 		d_6_1 = FALSE;//곰발
+
 		d_6_2 = FALSE;//토르의분노
+
 		e_1_1 = FALSE;//라식
+
 		e_1_2 = FALSE;//장화
+
 		e_2_1 = FALSE;//마법서
+
 		e_2_2 = FALSE;//기분
+
 		e_3_1 = FALSE;//활력
+
 		e_3_2 = FALSE;//저돌적공격
+
 		e_3_3 = FALSE;//신비공격
+
 		e_4_1 = FALSE;//경사
+
 		e_4_2 = FALSE;//골드도둑
+
 		e_5_1 = FALSE;//최후방어
+
 		e_6_1 = FALSE;//마법점멸
+
 		e_6_2 = FALSE;//가호
+		
 		point = 7;
 		point_buf.Format(_T("%d"), point);
 		dis_point.SetWindowTextW(point_buf);
@@ -740,5 +800,11 @@ public:
 
 		마법의점멸.EnableWindow(FALSE);
 		신의가호.EnableWindow(FALSE);
+		for (int i = 0;i<60 ; i++)
+		{
+			
+			abi[i] = 0;
+			
+		}
 	}
 };

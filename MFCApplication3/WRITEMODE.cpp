@@ -124,7 +124,7 @@ void WRITEMODE::OnBnClickedButton1()
 	int nindex = 0;
 	CString ch;
 	nindex = Dropbox.GetCurSel();
-	Dropbox.GetLBText(nindex,ch);
+	Dropbox.GetLBText(nindex, ch);
 
 	//디버그용
 	/*getCursel로 바꿉니다 ㅅㄱ, 근데 요건 냅겨둠, 왜냐? 디버그 출력용...*/
@@ -138,9 +138,9 @@ void WRITEMODE::OnBnClickedButton1()
 	//
 	//
 	kill = GetDlgItemInt(IDC_EDIT2);
-	death= GetDlgItemInt(IDC_EDIT3);
-	assist= GetDlgItemInt(IDC_EDIT4);
-	TRACE("킬:%d\n데스:%d\n 어시스트:%d\n", kill,death,assist);
+	death = GetDlgItemInt(IDC_EDIT3);
+	assist = GetDlgItemInt(IDC_EDIT4);
+	TRACE("킬:%d\n데스:%d\n 어시스트:%d\n", kill, death, assist);
 	//
 	BOOL wol = TRUE;//TRUE==WIN,FALSE==LOSE
 	if (WIN.GetCheck())
@@ -148,7 +148,7 @@ void WRITEMODE::OnBnClickedButton1()
 		wol = TRUE;
 		LOSE.SetCheck(0);
 	}
-	else if(LOSE.GetCheck())
+	else if (LOSE.GetCheck())
 	{
 		wol = FALSE;
 		WIN.SetCheck(0);
@@ -161,13 +161,13 @@ void WRITEMODE::OnBnClickedButton1()
 
 	//최종단계, 입력받은 값을 전달합니다.
 	char* name;
-	
+
 	TRACE("TIME:버튼누른시점, username=%s \n", input);
 	UpdateData(TRUE);
 	GetDlgItemText(IDC_EDIT1, input);
 
 	wchar_t *buf;
-	
+
 	int len;
 	buf = 유저네임.GetBuffer(유저네임.GetLength());
 	len = WideCharToMultiByte(CP_ACP, 0, buf, -1, NULL, 0, NULL, NULL);
@@ -197,10 +197,23 @@ void WRITEMODE::OnBnClickedButton1()
 			}
 		}
 	}
-		TRACE("TIME:저장소오픈,저장소있음\n");
-		//저장소로부터 값을 읽어들입니다.
-		TRACE("읽기함수 호출\n");
-		readsave(name);
+
+	if (WRITEsave != NULL) { fclose(WRITEsave); }
+	TRACE("TIME:저장소오픈,저장소있음\n");
+	//저장소로부터 값을 읽어들입니다.
+	TRACE("읽기함수 호출\n");
+	if (readsave(name) == -1)
+	{
+		REF_chara();
+		//작동종료
+
+		TRACE("종료\n");
+		delete name;
+		delete cha;
+		EndDialog(TRUE);
+	}
+	else
+	{
 		TRACE("읽기함수 탈출\n");
 
 
@@ -216,18 +229,18 @@ void WRITEMODE::OnBnClickedButton1()
 		bool 하프 = false;
 		int dummy = 0;
 		int chara = nindex;
-		
+
 		총합.게임횟수++;
 		총합.킬 += kill;
 		총합.데스 += death;
 		총합.어시스트 += assist;
-		if (wol == TRUE)	
+		if (wol == TRUE)
 		{
-			총합.승수++; 
+			총합.승수++;
 		}
-		else if (wol == FALSE)    
+		else if (wol == FALSE)
 		{
-			총합.패수++; 
+			총합.패수++;
 		}
 
 		if (총합.패수 != 0)
@@ -241,209 +254,237 @@ void WRITEMODE::OnBnClickedButton1()
 		dummy = 0;
 		if (true)
 		{
+
 			if (chara == dummy)
 			{
 				요우무_r1.input(kill, death, assist);
 				요우무_r1.WOL(wol);
-				요우무_r1.ABILITY();
 				딜러 = true;
-			요우무_r1.ABILITY();}
+				요우무_r1.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				요우무_r2.input(kill, death, assist);
 				요우무_r2.WOL(wol);
 				딜러 = true;
-			요우무_r2.ABILITY();}
+				요우무_r2.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				요우무_하이브리드.input(kill, death, assist);
 				요우무_하이브리드.WOL(wol);
 				딜러 = true;
-			요우무_하이브리드.ABILITY();}
+				요우무_하이브리드.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레이무.input(kill, death, assist);
 				레이무.WOL(wol);
 				딜러 = true;
-			레이무.ABILITY();}
+				레이무.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				치르노.input(kill, death, assist);
 				치르노.WOL(wol);
 				딜러 = true;
-			치르노.ABILITY();}
+				치르노.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				사쿠야_딜러.input(kill, death, assist);
 				사쿠야_딜러.WOL(wol);
 				딜러 = true;
-			사쿠야_딜러.ABILITY();}
+				사쿠야_딜러.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				사쿠야_탱커.input(kill, death, assist);
 				사쿠야_탱커.WOL(wol);
 				탱커 = true;
-			사쿠야_탱커.ABILITY();}
+				사쿠야_탱커.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				이쿠.input(kill, death, assist);
 				이쿠.WOL(wol);
 				딜러 = true;
-			이쿠.ABILITY();}
+				이쿠.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				무라사_물리.input(kill, death, assist);
 				무라사_물리.WOL(wol);
 				하프 = true;
-			무라사_물리.ABILITY();}
+				무라사_물리.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				무라사_마법.input(kill, death, assist);
 				무라사_마법.WOL(wol);
 				딜러 = true;
-			무라사_마법.ABILITY();}
+				무라사_마법.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				무라사_하이브리드.input(kill, death, assist);
 				무라사_하이브리드.WOL(wol);
 				딜러 = true;
-			무라사_하이브리드.ABILITY();}
+				무라사_하이브리드.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레이센_탱커.input(kill, death, assist);
 				레이센_탱커.WOL(wol);
 				탱커 = true;
-			레이센_탱커.ABILITY();}
+				레이센_탱커.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레이센_딜러.input(kill, death, assist);
 				레이센_딜러.WOL(wol);
 				딜러 = true;
-			레이센_딜러.ABILITY();}
+				레이센_딜러.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레이센_하이브리드.input(kill, death, assist);
 				레이센_하이브리드.WOL(wol);
 				딜러 = true;
-			레이센_하이브리드.ABILITY();}
+				레이센_하이브리드.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				앨리스_물리.input(kill, death, assist);
 				앨리스_물리.WOL(wol);
 				딜러 = true;
-			앨리스_물리.ABILITY();}
+				앨리스_물리.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				앨리스_마법.input(kill, death, assist);
 				앨리스_마법.WOL(wol);
 				딜러 = true;
-			앨리스_마법.ABILITY();}
+				앨리스_마법.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				앨리스_하이브리드.input(kill, death, assist);
 				앨리스_하이브리드.WOL(wol);
 				딜러 = true;
-			앨리스_하이브리드.ABILITY();}
+				앨리스_하이브리드.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레밀리아.input(kill, death, assist);
 				레밀리아.WOL(wol);
 				딜러 = true;
-			레밀리아.ABILITY();}
+				레밀리아.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				플랑도르.input(kill, death, assist);
 				플랑도르.WOL(wol);
 				딜러 = true;
-			플랑도르.ABILITY();}
+				플랑도르.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				흑화치르노.input(kill, death, assist);
 				흑화치르노.WOL(wol);
 				딜러 = true;
-			흑화치르노.ABILITY();}
+				흑화치르노.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴스드요우무_r1.input(kill, death, assist);
 				어드밴스드요우무_r1.WOL(wol);
 				딜러 = true;
-			어드밴스드요우무_r1.ABILITY();}
+				어드밴스드요우무_r1.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴스드요우무_r2.input(kill, death, assist);
 				어드밴스드요우무_r2.WOL(wol);
 				딜러 = true;
-			어드밴스드요우무_r2.ABILITY();}
+				어드밴스드요우무_r2.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴스드요우무_r3.input(kill, death, assist);
 				어드밴스드요우무_r3.WOL(wol);
 				딜러 = true;
-			어드밴스드요우무_r3.ABILITY();}
+				어드밴스드요우무_r3.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				마리사_딜러.input(kill, death, assist);
 				마리사_딜러.WOL(wol);
 				딜러 = true;
-			마리사_딜러.ABILITY();}
+				마리사_딜러.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				마리사_힐러.input(kill, death, assist);
 				마리사_힐러.WOL(wol);
 				힐러 = true;
-			마리사_힐러.ABILITY();}
+				마리사_힐러.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				마리사_하이브리드.input(kill, death, assist);
 				마리사_하이브리드.WOL(wol);
 				하프 = true;
-			마리사_하이브리드.ABILITY();}
+				마리사_하이브리드.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				유카리.input(kill, death, assist);
 				유카리.WOL(wol);
 				딜러 = true;
-			유카리.ABILITY();}
+				유카리.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				모코우.input(kill, death, assist);
 				모코우.WOL(wol);
 				탱커 = true;
-			모코우.ABILITY();}
+				모코우.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴트모미지.input(kill, death, assist);
 				어드밴트모미지.WOL(wol);
 				딜러 = true;
-				어드밴트모미지.ABILITY();
+				어드밴트모미지.ABILITY(abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -451,255 +492,285 @@ void WRITEMODE::OnBnClickedButton1()
 				파츄리.input(kill, death, assist);
 				파츄리.WOL(wol);
 				딜러 = true;
-			파츄리.ABILITY();}
+				파츄리.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				우츠호.input(kill, death, assist);
 				우츠호.WOL(wol);
 				딜러 = true;
-			우츠호.ABILITY();}
+				우츠호.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				스와코.input(kill, death, assist);
 				스와코.WOL(wol);
 				딜러 = true;
-			스와코.ABILITY();}
+				스와코.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				텐시_딜러.input(kill, death, assist);
 				텐시_딜러.WOL(wol);
 				딜러 = true;
-			텐시_딜러.ABILITY();}
+				텐시_딜러.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				텐시_탱커.input(kill, death, assist);
 				텐시_탱커.WOL(wol);
 				탱커 = true;
-			텐시_탱커.ABILITY();}
+				텐시_탱커.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴트치르노.input(kill, death, assist);
 				어드밴트치르노.WOL(wol);
 				딜러 = true;
-			어드밴트치르노.ABILITY();}
+				어드밴트치르노.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				코마치.input(kill, death, assist);
 				코마치.WOL(wol);
 				하프 = true;
-			코마치.ABILITY();}
+				코마치.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				아야.input(kill, death, assist);
 				아야.WOL(wol);
 				딜러 = true;
-			아야.ABILITY();}
+				아야.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴스드메이린.input(kill, death, assist);
 				어드밴스드메이린.WOL(wol);
 				딜러 = true;
-			어드밴스드메이린.ABILITY();}
+				어드밴스드메이린.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				사나에.input(kill, death, assist);
 				사나에.WOL(wol);
 				딜러 = true;
-			사나에.ABILITY();}
+				사나에.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				레티.input(kill, death, assist);
 				레티.WOL(wol);
 				하프 = true;
-			레티.ABILITY();}
+				레티.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				유유코.input(kill, death, assist);
 				유유코.WOL(wol);
 				힐러 = true;
-			유유코.ABILITY();}
+				유유코.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				에이린.input(kill, death, assist);
 				에이린.WOL(wol);
 				딜러 = true;
-			에이린.ABILITY();}
+				에이린.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				사토리.input(kill, death, assist);
 				사토리.WOL(wol);
 				탱커 = true;
-			사토리.ABILITY();}
+				사토리.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				바쿠렌.input(kill, death, assist);
 				바쿠렌.WOL(wol);
 				딜러 = true;
-			바쿠렌.ABILITY();}
+				바쿠렌.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				카구야.input(kill, death, assist);
 				카구야.WOL(wol);
 				딜러 = true;
-			카구야.ABILITY();}
+				카구야.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				미코.input(kill, death, assist);
 				미코.WOL(wol);
 				하프 = true;
-			미코.ABILITY();}
+				미코.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				누에.input(kill, death, assist);
 				누에.WOL(wol);
 				딜러 = true;
-			누에.ABILITY();}
+				누에.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				스이카.input(kill, death, assist);
 				스이카.WOL(wol);
 				탱커 = true;
-			스이카.ABILITY();}
+				스이카.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				시키.input(kill, death, assist);
 				시키.WOL(wol);
 				딜러 = true;
-			시키.ABILITY();}
+				시키.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				유카.input(kill, death, assist);
 				유카.WOL(wol);
 				딜러 = true;
-			유카.ABILITY();}
+				유카.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				흑화요우무.input(kill, death, assist);
 				흑화요우무.WOL(wol);
 				하프 = true;
-			흑화요우무.ABILITY();}
+				흑화요우무.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				어드밴트플랑.input(kill, death, assist);
 				어드밴트플랑.WOL(wol);
 				딜러 = true;
-			어드밴트플랑.ABILITY();}
+				어드밴트플랑.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				헤이메이린.input(kill, death, assist);
 				헤이메이린.WOL(wol);
 				딜러 = true;
-			헤이메이린.ABILITY();}
+				헤이메이린.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				홍메이린.input(kill, death, assist);
 				홍메이린.WOL(wol);
 				탱커 = true;
-			홍메이린.ABILITY();}
+				홍메이린.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				흑화카구야.input(kill, death, assist);
 				흑화카구야.WOL(wol);
 				딜러 = true;
-			흑화카구야.ABILITY();}
+				흑화카구야.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				모미지.input(kill, death, assist);
 				모미지.WOL(wol);
 				딜러 = true;
-			모미지.ABILITY();}
+				모미지.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				흑화무라사.input(kill, death, assist);
 				흑화무라사.WOL(wol);
 				탱커 = true;
-			흑화무라사.ABILITY();}
+				흑화무라사.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				조온.input(kill, death, assist);
 				조온.WOL(wol);
 				탱커 = true;
-			조온.ABILITY();}
+				조온.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				악마레이무.input(kill, death, assist);
 				악마레이무.WOL(wol);
 				딜러 = true;
-			악마레이무.ABILITY();}
+				악마레이무.ABILITY(abi);
+			}
 			dummy++;
 			if (chara == dummy)
 			{
 				흑화텐시.input(kill, death, assist);
 				흑화텐시.WOL(wol);
 				딜러 = true;
-			흑화텐시.ABILITY();
-			dummy++;
-		}
+				흑화텐시.ABILITY(abi);
+				dummy++;
+			}
 			tree.reset();
-		if (딜러 == true) { N_dataSTR.딜러++; }
-		if (힐러 == true) { N_dataSTR.힐러++; }
-		if (탱커 == true) { N_dataSTR.탱커++; }
-		if (하프 == true) { N_dataSTR.하프++; }
-		if ((N_dataSTR.딜러 > N_dataSTR.탱커)&(N_dataSTR.딜러 > N_dataSTR.힐러))
-		{
-			N_dataSTR.주포지션 = 1;
+			if (딜러 == true) { N_dataSTR.딜러++; }
+			if (힐러 == true) { N_dataSTR.힐러++; }
+			if (탱커 == true) { N_dataSTR.탱커++; }
+			if (하프 == true) { N_dataSTR.하프++; }
+			if ((N_dataSTR.딜러 > N_dataSTR.탱커)&(N_dataSTR.딜러 > N_dataSTR.힐러))
+			{
+				N_dataSTR.주포지션 = 1;
+			}
+			else if ((N_dataSTR.탱커 > N_dataSTR.힐러)&(N_dataSTR.탱커 > N_dataSTR.딜러))
+			{
+				N_dataSTR.주포지션 = 2;
+			}
+			else if ((N_dataSTR.힐러 > N_dataSTR.탱커)&(N_dataSTR.힐러 > N_dataSTR.딜러))
+			{
+				N_dataSTR.주포지션 = 3;
+			}
+			else
+			{
+				N_dataSTR.주포지션 = 0;
+			}
 		}
-		else if ((N_dataSTR.탱커 > N_dataSTR.힐러)&(N_dataSTR.탱커 > N_dataSTR.딜러))
-		{
-			N_dataSTR.주포지션 = 2;
-		}
-		else if ((N_dataSTR.힐러 > N_dataSTR.탱커)&(N_dataSTR.힐러 > N_dataSTR.딜러))
-		{
-			N_dataSTR.주포지션 = 3;
-		}
-		else
-		{
-			N_dataSTR.주포지션 = 0;
-		}
-		
 		딜러, 탱커, 힐러, 하프 = false;
-		
-	
-	//저장합니다
-	TRACE("저장\n");
-	putsave(name);
-	REF_chara();
-	//작동종료
-	
-	if (WRITEsave != NULL) { fclose(WRITEsave); }
-	TRACE("종료\n");
-	delete name;
-	delete cha;
-	EndDialog(TRUE);
+
+
+		//저장합니다
+		TRACE("저장\n");
+		putsave(name);
+		REF_chara();
+		//작동종료
+
+		TRACE("종료\n");
+		delete name;
+		delete cha;
+		EndDialog(TRUE);
+	}
 }
 
 
