@@ -138,4 +138,6 @@ void CMFCApplication3Dlg::OnBnClickedButton2()
 void CMFCApplication3Dlg::OnBnClickedButton3()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	
+
 }

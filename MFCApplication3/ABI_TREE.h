@@ -714,6 +714,16 @@ public:
 
 		e_6_2 = FALSE;//가호
 		
+		
+		for (int i = 0;i<60 ; i++)
+		{
+			
+			abi[i] = 0;
+			
+		}
+	}
+	void buttonreset()
+	{
 		point = 7;
 		point_buf.Format(_T("%d"), point);
 		dis_point.SetWindowTextW(point_buf);
@@ -800,11 +810,5 @@ public:
 
 		마법의점멸.EnableWindow(FALSE);
 		신의가호.EnableWindow(FALSE);
-		for (int i = 0;i<60 ; i++)
-		{
-			
-			abi[i] = 0;
-			
-		}
 	}
 };

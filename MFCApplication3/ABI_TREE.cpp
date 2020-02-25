@@ -178,7 +178,7 @@ void ABI_TREE::OnBnClickedOk()
 	if (a_5_2 == TRUE) { abi[i] = 1; }i++;
 
 	if (a_6_1 == TRUE){ abi[i] = 1; }i++;
-
+	TRACE("2번째 검사 성공\n");
 	if (a_6_2 == TRUE) { abi[i] = 1;}i++;//무자비한연사++; }
 
 	if (a_6_3 == TRUE) { abi[i] = 1;}i++;//환상적인공격++; }
@@ -274,6 +274,7 @@ void ABI_TREE::OnBnClickedOk()
 	if (e_6_1 == TRUE) { abi[i] = 1;}i++;//마법의점멸++; }
 
 	if (e_6_2 == TRUE) { abi[i] = 1;}i++;//신의가호++; }
+	TRACE("검사 완료\n");
 	CDialog::OnOK();
 }
 
@@ -1945,4 +1946,5 @@ void ABI_TREE::OnBnClickedReset()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	reset();
+	buttonreset();
 }

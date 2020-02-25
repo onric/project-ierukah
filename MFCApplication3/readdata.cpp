@@ -64,8 +64,8 @@ void readdata::OnBnClickedOk()
 	}
 	else
 	{
-	
-		readsave(name);
+		IOcon IO;
+		IO.readsave(name);
 		//표현합니다
 		STATUS stat;
 		stat.DoModal();

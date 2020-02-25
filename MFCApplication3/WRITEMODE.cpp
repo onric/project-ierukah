@@ -16,6 +16,7 @@ int len;
 #include "nouser.h"
 #include "ABI_TREE.h"
 #include <stdlib.h>
+#include <io.h>
 
 FILE* WRITEsave;
 CString input;
@@ -118,6 +119,7 @@ END_MESSAGE_MAP()
 
 void WRITEMODE::OnBnClickedButton1()
 {
+	IOcon IO;
 	CHARA::WLRate cal[63];
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	//값을 읽습니다.
@@ -178,11 +180,8 @@ void WRITEMODE::OnBnClickedButton1()
 	TRACE("TIME:카피전, username=%s \n", name);
 	strcpy(name, name);
 	//저장소를 엽니다
-	WRITEsave = fopen(name, "r+");
-	TRACE("TIME:저장소오픈\n");
-	if (WRITEsave == NULL)
+	if (_access_s(name, 06) == -1)
 	{
-
 		TRACE("TIME:저장소오픈, 저장소없음\n");
 		nouser open;
 		TRACE("TIME:새다이얼로그오픈, name=%s \n", name);
@@ -190,19 +189,21 @@ void WRITEMODE::OnBnClickedButton1()
 		if (open.OKNO == TRUE)
 		{
 			WRITEsave = fopen(name, "w");
-			putsave(name);
+			IO.putsave(name);
 			if (WRITEsave == NULL)
 			{
 				AfxMessageBox(_T("저장소생성 실패!"));
 			}
 		}
 	}
+	TRACE("TIME:저장소오픈\n");
 
-	if (WRITEsave != NULL) { fclose(WRITEsave); }
+
+
 	TRACE("TIME:저장소오픈,저장소있음\n");
 	//저장소로부터 값을 읽어들입니다.
 	TRACE("읽기함수 호출\n");
-	if (readsave(name) == -1)
+	if (IO.readsave(name) == -1)
 	{
 		REF_chara();
 		//작동종료
@@ -218,11 +219,13 @@ void WRITEMODE::OnBnClickedButton1()
 
 
 		//특성을 검사합니다.
+		TRACE("특성정보읽기\n");
 		ABI_TREE tree;
 		tree.DoModal();
-
+		TRACE("특성정보읽기 끝\n");
 		//
 
+		TRACE("데이터 연산개시\n");
 		bool 딜러 = false;
 		bool 탱커 = false;
 		bool 힐러 = false;
@@ -234,6 +237,7 @@ void WRITEMODE::OnBnClickedButton1()
 		총합.킬 += kill;
 		총합.데스 += death;
 		총합.어시스트 += assist;
+		TRACE("wol 검사\n");
 		if (wol == TRUE)
 		{
 			총합.승수++;
@@ -254,17 +258,23 @@ void WRITEMODE::OnBnClickedButton1()
 		dummy = 0;
 		if (true)
 		{
-
+			TRACE("캐릭터 확인\n");
 			if (chara == dummy)
 			{
 				요우무_r1.input(kill, death, assist);
+				TRACE("KDA 확인\n");
 				요우무_r1.WOL(wol);
+				TRACE("WOL 확인\n");
 				딜러 = true;
+				TRACE("POSITION 확인\n");
 				요우무_r1.ABILITY(abi);
 			}
+			TRACE("DUMMY 증가\n");
 			dummy++;
+			TRACE("DUMMY 증가완료\n");
 			if (chara == dummy)
 			{
+				TRACE("요우무_r2검사\n");
 				요우무_r2.input(kill, death, assist);
 				요우무_r2.WOL(wol);
 				딜러 = true;
@@ -762,7 +772,7 @@ void WRITEMODE::OnBnClickedButton1()
 
 		//저장합니다
 		TRACE("저장\n");
-		putsave(name);
+		IO.putsave(name);
 		REF_chara();
 		//작동종료
 
