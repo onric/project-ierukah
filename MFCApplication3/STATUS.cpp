@@ -55,7 +55,7 @@ void STATUS::OnCbnSelchangeCombo1()
 		char* type = NULL;
 		TRACE("TIME:COMBO, dummy:%d\n", dummy);
 		
-		/*if (N_dataSTR.주포지션 == 1)\
+		if (N_dataSTR.주포지션 == 1)\
 		{
 			strcpy(&position, "딜러");
 		}
@@ -71,8 +71,8 @@ void STATUS::OnCbnSelchangeCombo1()
 		{
 			strcpy(&position, "아직정해지지않음");
 		}
-		*/
-		DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : aa\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n"), 총합.게임횟수, 총합.승률, 총합.승수, 총합.패수, N_dataSTR.딜러, N_dataSTR.힐러, N_dataSTR.탱커, 총합.킬, 총합.데스, 총합.어시스트);
+
+		DISBUF.Format(_T("플레이 횟수 : %d\n승률 : %lf\n승리 : %d\n패배 : %d\n주 포지션 : %s\n딜러 플레이 횟수 : %d\n힐러 플레이 횟수 : %d\n탱커 플레이 횟수 : %d\nKDA : %d/%d/%d\n"), 총합.게임횟수, 총합.승률, 총합.승수, 총합.패수, position,N_dataSTR.딜러, N_dataSTR.힐러, N_dataSTR.탱커, 총합.킬, 총합.데스, 총합.어시스트);
 
 	}
 	TRACE("더미 증가\n");

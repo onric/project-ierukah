@@ -120,7 +120,7 @@ END_MESSAGE_MAP()
 void WRITEMODE::OnBnClickedButton1()
 {
 	IOcon IO;
-	CHARA::WLRate cal[63];
+	//CHARA::WLRate cal[63];
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	//값을 읽습니다.
 	int nindex = 0;
@@ -179,8 +179,10 @@ void WRITEMODE::OnBnClickedButton1()
 
 	TRACE("TIME:카피전, username=%s \n", name);
 	strcpy(name, name);
+	int acees = _access_s(name, 00);
 	//저장소를 엽니다
-	if (_access_s(name, 06) == -1)
+	TRACE("열기 : %d\n", acees);
+	if (acees != 0)
 	{
 		TRACE("TIME:저장소오픈, 저장소없음\n");
 		nouser open;
@@ -194,6 +196,10 @@ void WRITEMODE::OnBnClickedButton1()
 			{
 				AfxMessageBox(_T("저장소생성 실패!"));
 			}
+		}
+		else
+		{
+			return;
 		}
 	}
 	TRACE("TIME:저장소오픈\n");
@@ -223,6 +229,127 @@ void WRITEMODE::OnBnClickedButton1()
 		ABI_TREE tree;
 		tree.DoModal();
 		TRACE("특성정보읽기 끝\n");
+		int abi_test = 0;
+		int i = 0;
+		//
+		if (tree.a_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_1_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_2_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_2_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_3_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_4_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_4_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_5_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_5_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_6_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;
+
+		if (tree.a_6_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//무자비한연사
+
+		if (tree.a_6_3 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//환상적인공격
+
+		if (tree.b_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//밤의사냥꾼
+
+		if (tree.b_1_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//비겁한고블린
+
+		if (tree.b_2_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//깨물기
+
+		if (tree.b_2_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//이동의즐거움
+
+		if (tree.b_3_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배전투의기본
+
+		if (tree.b_3_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배푸른영기
+
+		if (tree.b_4_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배갑옷무력화
+
+		if (tree.b_4_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배저항무력화
+
+		if (tree.b_5_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배물리용분++; }
+
+		if (tree.b_5_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//지배마법용분++; }
+
+		if (tree.b_6_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//제우스의분노++; }
+
+		if (tree.b_6_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//오디세우스의성검++; }
+
+		if (tree.c_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//깨달음++; }
+
+		if (tree.c_1_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//흑마법++; }
+
+		if (tree.c_2_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//판다렌의화염작렬++; }
+
+		if (tree.c_2_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법부스터++; }
+
+		if (tree.c_3_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법전투의기본++; }
+
+		if (tree.c_3_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법푸른영기++; }
+
+		if (tree.c_4_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법갑옷무력화++; }
+
+		if (tree.c_4_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법저항무력화++; }
+
+		if (tree.c_5_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법물리용분++; }
+
+		if (tree.c_5_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법마법용분++; }
+
+		if (tree.c_6_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//대마법신비로운메테오++; }
+
+		if (tree.c_6_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법펀치++; }
+
+		if (tree.d_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//음과양의조화++; }
+
+		if (tree.d_1_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//아레스의투구++; }
+
+		if (tree.d_2_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//단단한벽++; }
+
+		if (tree.d_2_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법의망토++; }
+
+		if (tree.d_3_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//강인한체력++; }
+
+		if (tree.d_4_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//신비의방패++; }
+
+		if (tree.d_4_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//저항의방패++; }
+
+		if (tree.d_5_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//긍지최후의방어++; }
+
+		if (tree.d_6_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//곰발바닥++; }
+
+		if (tree.d_6_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//토르의분노++; }
+
+		if (tree.e_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//라식++; }
+
+		if (tree.e_1_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//축복의장화++; }
+
+		if (tree.e_2_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//고대신비의마법서++; }
+
+		if (tree.e_2_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//산뜻한기분++; }
+
+		if (tree.e_3_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//활력증진++; }
+
+		if (tree.e_3_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//저돌적인공격방식++; }
+
+		if (tree.e_3_3 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//신비한공격방식++; }
+
+		if (tree.e_4_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//경험치사기꾼++; }
+
+		if (tree.e_4_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//골드도둑++; }
+
+		if (tree.e_5_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//축복최후의방어++; }
+
+		if (tree.e_6_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//마법의점멸++; }
+
+		if (tree.e_6_2 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i); }i++;//신의가호++; }
+		//
+		TRACE("%d\n", abi_test);
+		
 		//
 
 		TRACE("데이터 연산개시\n");
@@ -234,27 +361,10 @@ void WRITEMODE::OnBnClickedButton1()
 		int chara = nindex;
 
 		총합.게임횟수++;
-		총합.킬 += kill;
-		총합.데스 += death;
-		총합.어시스트 += assist;
+		총합.input(kill, death, assist);
 		TRACE("wol 검사\n");
-		if (wol == TRUE)
-		{
-			총합.승수++;
-		}
-		else if (wol == FALSE)
-		{
-			총합.패수++;
-		}
-
-		if (총합.패수 != 0)
-		{
-			총합.승률 = 총합.승수 / 총합.패수;
-		}
-		else
-		{
-			총합.승률 = 1;
-		}
+		총합.WOL(wol);
+		총합.ABILITY(TRAN_abi);
 		dummy = 0;
 		if (true)
 		{
@@ -267,7 +377,7 @@ void WRITEMODE::OnBnClickedButton1()
 				TRACE("WOL 확인\n");
 				딜러 = true;
 				TRACE("POSITION 확인\n");
-				요우무_r1.ABILITY(abi);
+				요우무_r1.ABILITY(TRAN_abi);
 			}
 			TRACE("DUMMY 증가\n");
 			dummy++;
@@ -278,7 +388,7 @@ void WRITEMODE::OnBnClickedButton1()
 				요우무_r2.input(kill, death, assist);
 				요우무_r2.WOL(wol);
 				딜러 = true;
-				요우무_r2.ABILITY(abi);
+				요우무_r2.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -286,7 +396,7 @@ void WRITEMODE::OnBnClickedButton1()
 				요우무_하이브리드.input(kill, death, assist);
 				요우무_하이브리드.WOL(wol);
 				딜러 = true;
-				요우무_하이브리드.ABILITY(abi);
+				요우무_하이브리드.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -294,7 +404,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레이무.input(kill, death, assist);
 				레이무.WOL(wol);
 				딜러 = true;
-				레이무.ABILITY(abi);
+				레이무.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -302,7 +412,7 @@ void WRITEMODE::OnBnClickedButton1()
 				치르노.input(kill, death, assist);
 				치르노.WOL(wol);
 				딜러 = true;
-				치르노.ABILITY(abi);
+				치르노.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -310,7 +420,7 @@ void WRITEMODE::OnBnClickedButton1()
 				사쿠야_딜러.input(kill, death, assist);
 				사쿠야_딜러.WOL(wol);
 				딜러 = true;
-				사쿠야_딜러.ABILITY(abi);
+				사쿠야_딜러.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -318,7 +428,7 @@ void WRITEMODE::OnBnClickedButton1()
 				사쿠야_탱커.input(kill, death, assist);
 				사쿠야_탱커.WOL(wol);
 				탱커 = true;
-				사쿠야_탱커.ABILITY(abi);
+				사쿠야_탱커.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -326,7 +436,7 @@ void WRITEMODE::OnBnClickedButton1()
 				이쿠.input(kill, death, assist);
 				이쿠.WOL(wol);
 				딜러 = true;
-				이쿠.ABILITY(abi);
+				이쿠.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -334,7 +444,7 @@ void WRITEMODE::OnBnClickedButton1()
 				무라사_물리.input(kill, death, assist);
 				무라사_물리.WOL(wol);
 				하프 = true;
-				무라사_물리.ABILITY(abi);
+				무라사_물리.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -342,7 +452,7 @@ void WRITEMODE::OnBnClickedButton1()
 				무라사_마법.input(kill, death, assist);
 				무라사_마법.WOL(wol);
 				딜러 = true;
-				무라사_마법.ABILITY(abi);
+				무라사_마법.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -350,7 +460,7 @@ void WRITEMODE::OnBnClickedButton1()
 				무라사_하이브리드.input(kill, death, assist);
 				무라사_하이브리드.WOL(wol);
 				딜러 = true;
-				무라사_하이브리드.ABILITY(abi);
+				무라사_하이브리드.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -358,7 +468,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레이센_탱커.input(kill, death, assist);
 				레이센_탱커.WOL(wol);
 				탱커 = true;
-				레이센_탱커.ABILITY(abi);
+				레이센_탱커.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -366,7 +476,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레이센_딜러.input(kill, death, assist);
 				레이센_딜러.WOL(wol);
 				딜러 = true;
-				레이센_딜러.ABILITY(abi);
+				레이센_딜러.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -374,7 +484,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레이센_하이브리드.input(kill, death, assist);
 				레이센_하이브리드.WOL(wol);
 				딜러 = true;
-				레이센_하이브리드.ABILITY(abi);
+				레이센_하이브리드.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -382,7 +492,7 @@ void WRITEMODE::OnBnClickedButton1()
 				앨리스_물리.input(kill, death, assist);
 				앨리스_물리.WOL(wol);
 				딜러 = true;
-				앨리스_물리.ABILITY(abi);
+				앨리스_물리.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -390,7 +500,7 @@ void WRITEMODE::OnBnClickedButton1()
 				앨리스_마법.input(kill, death, assist);
 				앨리스_마법.WOL(wol);
 				딜러 = true;
-				앨리스_마법.ABILITY(abi);
+				앨리스_마법.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -398,7 +508,7 @@ void WRITEMODE::OnBnClickedButton1()
 				앨리스_하이브리드.input(kill, death, assist);
 				앨리스_하이브리드.WOL(wol);
 				딜러 = true;
-				앨리스_하이브리드.ABILITY(abi);
+				앨리스_하이브리드.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -406,7 +516,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레밀리아.input(kill, death, assist);
 				레밀리아.WOL(wol);
 				딜러 = true;
-				레밀리아.ABILITY(abi);
+				레밀리아.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -414,7 +524,7 @@ void WRITEMODE::OnBnClickedButton1()
 				플랑도르.input(kill, death, assist);
 				플랑도르.WOL(wol);
 				딜러 = true;
-				플랑도르.ABILITY(abi);
+				플랑도르.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -422,7 +532,7 @@ void WRITEMODE::OnBnClickedButton1()
 				흑화치르노.input(kill, death, assist);
 				흑화치르노.WOL(wol);
 				딜러 = true;
-				흑화치르노.ABILITY(abi);
+				흑화치르노.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -430,7 +540,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴스드요우무_r1.input(kill, death, assist);
 				어드밴스드요우무_r1.WOL(wol);
 				딜러 = true;
-				어드밴스드요우무_r1.ABILITY(abi);
+				어드밴스드요우무_r1.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -438,7 +548,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴스드요우무_r2.input(kill, death, assist);
 				어드밴스드요우무_r2.WOL(wol);
 				딜러 = true;
-				어드밴스드요우무_r2.ABILITY(abi);
+				어드밴스드요우무_r2.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -446,7 +556,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴스드요우무_r3.input(kill, death, assist);
 				어드밴스드요우무_r3.WOL(wol);
 				딜러 = true;
-				어드밴스드요우무_r3.ABILITY(abi);
+				어드밴스드요우무_r3.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -454,7 +564,7 @@ void WRITEMODE::OnBnClickedButton1()
 				마리사_딜러.input(kill, death, assist);
 				마리사_딜러.WOL(wol);
 				딜러 = true;
-				마리사_딜러.ABILITY(abi);
+				마리사_딜러.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -462,7 +572,7 @@ void WRITEMODE::OnBnClickedButton1()
 				마리사_힐러.input(kill, death, assist);
 				마리사_힐러.WOL(wol);
 				힐러 = true;
-				마리사_힐러.ABILITY(abi);
+				마리사_힐러.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -470,7 +580,7 @@ void WRITEMODE::OnBnClickedButton1()
 				마리사_하이브리드.input(kill, death, assist);
 				마리사_하이브리드.WOL(wol);
 				하프 = true;
-				마리사_하이브리드.ABILITY(abi);
+				마리사_하이브리드.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -478,7 +588,7 @@ void WRITEMODE::OnBnClickedButton1()
 				유카리.input(kill, death, assist);
 				유카리.WOL(wol);
 				딜러 = true;
-				유카리.ABILITY(abi);
+				유카리.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -486,7 +596,7 @@ void WRITEMODE::OnBnClickedButton1()
 				모코우.input(kill, death, assist);
 				모코우.WOL(wol);
 				탱커 = true;
-				모코우.ABILITY(abi);
+				모코우.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -494,7 +604,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴트모미지.input(kill, death, assist);
 				어드밴트모미지.WOL(wol);
 				딜러 = true;
-				어드밴트모미지.ABILITY(abi);
+				어드밴트모미지.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -502,7 +612,7 @@ void WRITEMODE::OnBnClickedButton1()
 				파츄리.input(kill, death, assist);
 				파츄리.WOL(wol);
 				딜러 = true;
-				파츄리.ABILITY(abi);
+				파츄리.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -510,7 +620,7 @@ void WRITEMODE::OnBnClickedButton1()
 				우츠호.input(kill, death, assist);
 				우츠호.WOL(wol);
 				딜러 = true;
-				우츠호.ABILITY(abi);
+				우츠호.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -518,7 +628,7 @@ void WRITEMODE::OnBnClickedButton1()
 				스와코.input(kill, death, assist);
 				스와코.WOL(wol);
 				딜러 = true;
-				스와코.ABILITY(abi);
+				스와코.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -526,7 +636,7 @@ void WRITEMODE::OnBnClickedButton1()
 				텐시_딜러.input(kill, death, assist);
 				텐시_딜러.WOL(wol);
 				딜러 = true;
-				텐시_딜러.ABILITY(abi);
+				텐시_딜러.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -534,7 +644,7 @@ void WRITEMODE::OnBnClickedButton1()
 				텐시_탱커.input(kill, death, assist);
 				텐시_탱커.WOL(wol);
 				탱커 = true;
-				텐시_탱커.ABILITY(abi);
+				텐시_탱커.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -542,7 +652,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴트치르노.input(kill, death, assist);
 				어드밴트치르노.WOL(wol);
 				딜러 = true;
-				어드밴트치르노.ABILITY(abi);
+				어드밴트치르노.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -550,7 +660,7 @@ void WRITEMODE::OnBnClickedButton1()
 				코마치.input(kill, death, assist);
 				코마치.WOL(wol);
 				하프 = true;
-				코마치.ABILITY(abi);
+				코마치.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -558,7 +668,7 @@ void WRITEMODE::OnBnClickedButton1()
 				아야.input(kill, death, assist);
 				아야.WOL(wol);
 				딜러 = true;
-				아야.ABILITY(abi);
+				아야.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -566,7 +676,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴스드메이린.input(kill, death, assist);
 				어드밴스드메이린.WOL(wol);
 				딜러 = true;
-				어드밴스드메이린.ABILITY(abi);
+				어드밴스드메이린.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -574,7 +684,7 @@ void WRITEMODE::OnBnClickedButton1()
 				사나에.input(kill, death, assist);
 				사나에.WOL(wol);
 				딜러 = true;
-				사나에.ABILITY(abi);
+				사나에.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -582,7 +692,7 @@ void WRITEMODE::OnBnClickedButton1()
 				레티.input(kill, death, assist);
 				레티.WOL(wol);
 				하프 = true;
-				레티.ABILITY(abi);
+				레티.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -590,7 +700,7 @@ void WRITEMODE::OnBnClickedButton1()
 				유유코.input(kill, death, assist);
 				유유코.WOL(wol);
 				힐러 = true;
-				유유코.ABILITY(abi);
+				유유코.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -598,7 +708,7 @@ void WRITEMODE::OnBnClickedButton1()
 				에이린.input(kill, death, assist);
 				에이린.WOL(wol);
 				딜러 = true;
-				에이린.ABILITY(abi);
+				에이린.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -606,7 +716,7 @@ void WRITEMODE::OnBnClickedButton1()
 				사토리.input(kill, death, assist);
 				사토리.WOL(wol);
 				탱커 = true;
-				사토리.ABILITY(abi);
+				사토리.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -614,7 +724,7 @@ void WRITEMODE::OnBnClickedButton1()
 				바쿠렌.input(kill, death, assist);
 				바쿠렌.WOL(wol);
 				딜러 = true;
-				바쿠렌.ABILITY(abi);
+				바쿠렌.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -622,7 +732,7 @@ void WRITEMODE::OnBnClickedButton1()
 				카구야.input(kill, death, assist);
 				카구야.WOL(wol);
 				딜러 = true;
-				카구야.ABILITY(abi);
+				카구야.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -630,7 +740,7 @@ void WRITEMODE::OnBnClickedButton1()
 				미코.input(kill, death, assist);
 				미코.WOL(wol);
 				하프 = true;
-				미코.ABILITY(abi);
+				미코.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -638,7 +748,7 @@ void WRITEMODE::OnBnClickedButton1()
 				누에.input(kill, death, assist);
 				누에.WOL(wol);
 				딜러 = true;
-				누에.ABILITY(abi);
+				누에.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -646,7 +756,7 @@ void WRITEMODE::OnBnClickedButton1()
 				스이카.input(kill, death, assist);
 				스이카.WOL(wol);
 				탱커 = true;
-				스이카.ABILITY(abi);
+				스이카.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -654,7 +764,7 @@ void WRITEMODE::OnBnClickedButton1()
 				시키.input(kill, death, assist);
 				시키.WOL(wol);
 				딜러 = true;
-				시키.ABILITY(abi);
+				시키.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -662,7 +772,7 @@ void WRITEMODE::OnBnClickedButton1()
 				유카.input(kill, death, assist);
 				유카.WOL(wol);
 				딜러 = true;
-				유카.ABILITY(abi);
+				유카.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -670,7 +780,7 @@ void WRITEMODE::OnBnClickedButton1()
 				흑화요우무.input(kill, death, assist);
 				흑화요우무.WOL(wol);
 				하프 = true;
-				흑화요우무.ABILITY(abi);
+				흑화요우무.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -678,7 +788,7 @@ void WRITEMODE::OnBnClickedButton1()
 				어드밴트플랑.input(kill, death, assist);
 				어드밴트플랑.WOL(wol);
 				딜러 = true;
-				어드밴트플랑.ABILITY(abi);
+				어드밴트플랑.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -686,7 +796,7 @@ void WRITEMODE::OnBnClickedButton1()
 				헤이메이린.input(kill, death, assist);
 				헤이메이린.WOL(wol);
 				딜러 = true;
-				헤이메이린.ABILITY(abi);
+				헤이메이린.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -694,7 +804,7 @@ void WRITEMODE::OnBnClickedButton1()
 				홍메이린.input(kill, death, assist);
 				홍메이린.WOL(wol);
 				탱커 = true;
-				홍메이린.ABILITY(abi);
+				홍메이린.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -702,7 +812,7 @@ void WRITEMODE::OnBnClickedButton1()
 				흑화카구야.input(kill, death, assist);
 				흑화카구야.WOL(wol);
 				딜러 = true;
-				흑화카구야.ABILITY(abi);
+				흑화카구야.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -710,7 +820,7 @@ void WRITEMODE::OnBnClickedButton1()
 				모미지.input(kill, death, assist);
 				모미지.WOL(wol);
 				딜러 = true;
-				모미지.ABILITY(abi);
+				모미지.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -718,7 +828,7 @@ void WRITEMODE::OnBnClickedButton1()
 				흑화무라사.input(kill, death, assist);
 				흑화무라사.WOL(wol);
 				탱커 = true;
-				흑화무라사.ABILITY(abi);
+				흑화무라사.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -726,7 +836,7 @@ void WRITEMODE::OnBnClickedButton1()
 				조온.input(kill, death, assist);
 				조온.WOL(wol);
 				탱커 = true;
-				조온.ABILITY(abi);
+				조온.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -734,7 +844,7 @@ void WRITEMODE::OnBnClickedButton1()
 				악마레이무.input(kill, death, assist);
 				악마레이무.WOL(wol);
 				딜러 = true;
-				악마레이무.ABILITY(abi);
+				악마레이무.ABILITY(TRAN_abi);
 			}
 			dummy++;
 			if (chara == dummy)
@@ -742,7 +852,7 @@ void WRITEMODE::OnBnClickedButton1()
 				흑화텐시.input(kill, death, assist);
 				흑화텐시.WOL(wol);
 				딜러 = true;
-				흑화텐시.ABILITY(abi);
+				흑화텐시.ABILITY(TRAN_abi);
 				dummy++;
 			}
 			tree.reset();
@@ -768,7 +878,12 @@ void WRITEMODE::OnBnClickedButton1()
 			}
 		}
 		딜러, 탱커, 힐러, 하프 = false;
+		for (int i = 0; i < 60; i++)
+		{
 
+			TRAN_abi[i] = 0;
+
+		}
 
 		//저장합니다
 		TRACE("저장\n");

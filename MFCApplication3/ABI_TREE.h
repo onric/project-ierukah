@@ -1,64 +1,7 @@
 ﻿#pragma once
 
-static int abi[60];
-static bool a_1_1;//백조
-static bool a_1_2;//삼지창
-static bool a_2_1;//반지
-static bool a_2_2;//탄환
-static bool a_3_1;//갈망의검
-static bool a_4_1;//갑옷무력화(투쟁)
-static bool a_4_2;//저항무력화(투쟁)
-static bool a_5_1;//물리 용분(투쟁)
-static bool a_5_2;//마법용분(투쟁)
-static bool a_6_1;//집중사격
-static bool a_6_2;//연사
-static bool a_6_3;//환공
-static bool b_1_1;//밤사
-static bool b_1_2;//고블린
-static bool b_2_1;//깨물기
-static bool b_2_2;//이동의즐거움
-static bool b_3_1;//전투의기본(지배)
-static bool b_3_2;//푸른영기(지배)
-static bool b_4_1;//갑옷무력화(지배)
-static bool b_4_2;//저항무력화(지배)
-static bool b_5_1;//물리용분(지배)
-static bool b_5_2;//마법용분(지배)
-static bool b_6_1;//제우스
-static bool b_6_2;//성검
-static bool c_1_1;//깨달음
-static bool c_1_2;//흑마법
-static bool c_2_1;//판다렌
-static bool c_2_2;//마법부스터
-static bool c_3_1;//전투의기본(마법)
-static bool c_3_2;//푸른영기(마법)
-static bool c_4_1;//갑옷무력화(마법)
-static bool c_4_2;//저항무력화(마법)
-static bool c_5_1;//물리용분(마법)
-static bool c_5_2;//마법용분(마법)
-static bool c_6_1;//메테오
-static bool c_6_2;//마펀
-static bool d_1_1;//음양조화
-static bool d_1_2;//아레스
-static bool d_2_1;//단단벽
-static bool d_2_2;//마법망토
-static bool d_3_1;//강인체력
-static bool d_4_1;//신비방패
-static bool d_4_2;//저항방패
-static bool d_5_1;//최후방어
-static bool d_6_1;//곰발
-static bool d_6_2;//토르의분노
-static bool e_1_1;//라식
-static bool e_1_2;//장화
-static bool e_2_1;//마법서
-static bool e_2_2;//기분
-static bool e_3_1;//활력
-static bool e_3_2;//저돌적공격
-static bool e_3_3;//신비공격
-static bool e_4_1;//경사
-static bool e_4_2;//골드도둑
-static bool e_5_1;//최후방어
-static bool e_6_1;//마법점멸
-static bool e_6_2;//가호
+
+
 // ABI_TREE 대화 상자
 
 class ABI_TREE : public CDialog
@@ -116,6 +59,64 @@ public:
 	bool e_3 = FALSE;
 	bool e_4 = FALSE;
 	bool e_5 = FALSE;
+	 bool a_1_1;//백조
+	 bool a_1_2;//삼지창
+	 bool a_2_1;//반지
+	 bool a_2_2;//탄환
+	 bool a_3_1;//갈망의검
+	 bool a_4_1;//갑옷무력화(투쟁)
+	 bool a_4_2;//저항무력화(투쟁)
+	 bool a_5_1;//물리 용분(투쟁)
+	 bool a_5_2;//마법용분(투쟁)
+	 bool a_6_1;//집중사격
+	 bool a_6_2;//연사
+	 bool a_6_3;//환공
+	 bool b_1_1;//밤사
+	 bool b_1_2;//고블린
+	 bool b_2_1;//깨물기
+	 bool b_2_2;//이동의즐거움
+	 bool b_3_1;//전투의기본(지배)
+	 bool b_3_2;//푸른영기(지배)
+	 bool b_4_1;//갑옷무력화(지배)
+	 bool b_4_2;//저항무력화(지배)
+	 bool b_5_1;//물리용분(지배)
+	 bool b_5_2;//마법용분(지배)
+	 bool b_6_1;//제우스
+	 bool b_6_2;//성검
+	 bool c_1_1;//깨달음
+	 bool c_1_2;//흑마법
+	 bool c_2_1;//판다렌
+	 bool c_2_2;//마법부스터
+	 bool c_3_1;//전투의기본(마법)
+	 bool c_3_2;//푸른영기(마법)
+	 bool c_4_1;//갑옷무력화(마법)
+	 bool c_4_2;//저항무력화(마법)
+	 bool c_5_1;//물리용분(마법)
+	 bool c_5_2;//마법용분(마법)
+	 bool c_6_1;//메테오
+	 bool c_6_2;//마펀
+	 bool d_1_1;//음양조화
+	 bool d_1_2;//아레스
+	 bool d_2_1;//단단벽
+	 bool d_2_2;//마법망토
+	 bool d_3_1;//강인체력
+	 bool d_4_1;//신비방패
+	 bool d_4_2;//저항방패
+	 bool d_5_1;//최후방어
+	 bool d_6_1;//곰발
+	 bool d_6_2;//토르의분노
+	 bool e_1_1;//라식
+	 bool e_1_2;//장화
+	 bool e_2_1;//마법서
+	 bool e_2_2;//기분
+	 bool e_3_1;//활력
+	 bool e_3_2;//저돌적공격
+	 bool e_3_3;//신비공격
+	 bool e_4_1;//경사
+	 bool e_4_2;//골드도둑
+	 bool e_5_1;//최후방어
+	 bool e_6_1;//마법점멸
+	 bool e_6_2;//가호
 	//a=투쟁,b=지배,c=마법,d=긍지,e=축복
 	//1,2,3,4,5..=줄 개수
 	// 이상의 변수는 특성을 찍을수 있는 요구조건을 구별하기 위함임
@@ -715,12 +716,7 @@ public:
 		e_6_2 = FALSE;//가호
 		
 		
-		for (int i = 0;i<60 ; i++)
-		{
-			
-			abi[i] = 0;
-			
-		}
+		
 	}
 	void buttonreset()
 	{
@@ -811,4 +807,5 @@ public:
 		마법의점멸.EnableWindow(FALSE);
 		신의가호.EnableWindow(FALSE);
 	}
+	
 };
