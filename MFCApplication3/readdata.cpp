@@ -66,12 +66,15 @@ void readdata::OnBnClickedOk()
 	{
 		IOcon IO;
 		IO.readsave(name);
+		TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
 		//표현합니다
 		STATUS stat;
 		stat.DoModal();
+		TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
 		TRACE("TIME:readdata, FCLOSE\n");
 		fclose(save);
 	}
+	//REF_chara();
 	delete name;
 	
 

@@ -192,6 +192,7 @@
     <ClInclude Include="nouser.h" />
     <ClInclude Include="readdata.h" />
     <ClInclude Include="READFILE.h" />
+    <ClInclude Include="READTREE.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="STATUS.h" />
     <ClInclude Include="stdafx.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="nouser.cpp" />
     <ClCompile Include="readdata.cpp" />
     <ClCompile Include="READFILE.cpp" />
+    <ClCompile Include="READTREE.cpp" />
     <ClCompile Include="STATUS.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
