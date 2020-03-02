@@ -159,6 +159,7 @@ void ABI_TREE::OnBnClickedOk()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	TRACE("ok버튼 눌림\n");
+	TRACE("test : %d\n", 총합.게임횟수);
 	int i = 0;
 	if (a_1_1 == TRUE) { TRAN_abi[i] = 1; TRACE("%d 눌림\n", i);}i++;
 

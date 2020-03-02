@@ -5,7 +5,7 @@
 #include "MFCApplication3.h"
 #include "readdata.h"
 #include "afxdialogex.h"
-
+#include <io.h>
 #include "STATUS.h"
 
 FILE* save;
@@ -43,9 +43,11 @@ END_MESSAGE_MAP()
 
 void readdata::OnBnClickedOk()
 {
+	REF_chara();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	UpdateData(TRUE);
 	wchar_t *buf;
+	
 	char* name;
 	int len;
 	buf = inputedname.GetBuffer(inputedname.GetLength());
@@ -57,28 +59,33 @@ void readdata::OnBnClickedOk()
 	TRACE("TIME:카피전, username=%s \n", name);
 	strcpy(name, name);
 	//파일 존재확인
-	save = fopen(name, "r");
-	if (save == NULL)
+	int acees = _access_s(name, 00);
+	if (acees != 0)
 	{
+		TRACE("파일없음\n");
 		AfxMessageBox(_T("해당 유저의 저장소가 없습니다."));
+		//delete name;
+		return;
 	}
 	else
 	{
-		IOcon IO;
-		IO.readsave(name);
-		TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
+		
+		//if (IO.readsave(name) == -1) { TRACE("오류검출\n!"); }
+		//TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
 		//표현합니다
 		STATUS stat;
+		stat.getname(name, len+1);
+		
+		TRACE("새 다이얼로그 오픈\n");
 		stat.DoModal();
-		TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
-		TRACE("TIME:readdata, FCLOSE\n");
-		fclose(save);
+		TRACE("새 다이얼로그 종료\n");
+		//TRACE("테스트용 게임횟수 출력 : %d\n", 총합.게임횟수);
+		
 	}
 	//REF_chara();
-	delete name;
 	
 
-
+	
 	
 	CDialogEx::OnOK();
 }

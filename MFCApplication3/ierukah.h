@@ -8,8 +8,8 @@
 #define 캐릭개수 60
 
 
+
 //dmdrldlt
-//static int abi[60];
 static int TRAN_abi[60];
 //
 
@@ -20,7 +20,7 @@ class chara
 		//레이팅정보를 수집합니다.
 		정수형 연승 = 0;
 		정수형 연패 = 0;
-		음_정수형 레이팅 = 0;
+		음_정수형 레이팅 = 1000;
 		//kda및 승률을 선언합니다
 		정수형 킬 = 0;
 		정수형 데스 = 0;
@@ -21119,8 +21119,10 @@ public:
 		TRACE("단계변화\n");//
 
 		//
+		fclose(savefile);
 		TRACE("모든 데이터를 읽어들였습니다.\n");
 	}
 	
 };
 
+static IOcon IO;
