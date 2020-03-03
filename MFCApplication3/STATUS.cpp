@@ -47,12 +47,13 @@ void STATUS::OnCbnSelchangeCombo1()
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	CString DISBUF = (_T("이게 뜬다면 버그임 ㅇㅋ?\n\n"));
 	
+	
 	if (triger == FALSE)
 	{
 		IO.readsave(M_name);
 		triger = TRUE;
 	}
-	
+
 	double kda = 0;
 	UpdateData(TRUE);
 	int chara = listMENU.GetCurSel();

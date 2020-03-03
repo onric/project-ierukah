@@ -23,4 +23,5 @@ protected:
 public:
 	CString inputedname;
 	afx_msg void OnBnClickedOk();
+	CEdit editcon;
 };

@@ -25,12 +25,13 @@ public:
 	afx_msg void OnCbnSelchangeCombo1();
 	CComboBox listMENU;
 	CStatic DISPLAY;
-	char* M_name;
+	
+	char M_name[20];
 	afx_msg void OnBnClickedButton1();
-	void getname(char* P_name,int len)
+	void getname(char* P_name)
 	{
-		M_name = new char[len];
-		M_name = P_name;
+		strcpy(M_name, P_name);
+		//M_name = P_name;
 	}
 	afx_msg void OnBnClickedCancel();
 };
