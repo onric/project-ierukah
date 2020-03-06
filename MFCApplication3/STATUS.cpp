@@ -7,6 +7,7 @@
 #include "afxdialogex.h"
 #include "ierukah.h"
 #include "readdata.h"
+#include "READTREE.h"
 // STATUS 대화 상자
 BOOL triger = FALSE;
 IMPLEMENT_DYNAMIC(STATUS, CDialog)
@@ -50,6 +51,7 @@ void STATUS::OnCbnSelchangeCombo1()
 	
 	if (triger == FALSE)
 	{
+		REF_chara();
 		IO.readsave(M_name);
 		triger = TRUE;
 	}
@@ -503,6 +505,318 @@ void STATUS::OnCbnSelchangeCombo1()
 void STATUS::OnBnClickedButton1()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int chara = listMENU.GetCurSel();
+	if (triger == FALSE)
+	{
+		AfxMessageBox(_T("우선 항목을 정해주세요"));
+		return;
+	}
+	TRACE("새다이얼로그 오픈\n");
+	READTREE STATtree;
+	int dummy = 0;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(요우무_r1);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(요우무_r2);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(요우무_하이브리드);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레이무);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(치르노);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(사쿠야_딜러);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(사쿠야_탱커);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(이쿠);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(무라사_물리);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(무라사_마법);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(무라사_하이브리드);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레이센_탱커);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레이센_딜러);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레이센_하이브리드);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(앨리스_물리);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(앨리스_마법);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(앨리스_하이브리드);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레밀리아);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(플랑도르);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(흑화치르노);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴스드요우무_r1);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴스드요우무_r2);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴스드요우무_r3);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(마리사_딜러);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(마리사_힐러);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(마리사_하이브리드);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(유카리);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(모코우);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴트모미지);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(파츄리);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(우츠호);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(스와코);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(텐시_딜러);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(텐시_탱커);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴트치르노);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(코마치);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(아야);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴스드메이린);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(사나에);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(레티);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(유유코);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(에이린);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(사토리);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(바쿠렌);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(카구야);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(미코);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(누에);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(스이카);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(시키);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(유카);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(흑화요우무);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(어드밴트플랑);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(헤이메이린);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(홍메이린);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(흑화카구야);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(모미지);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(흑화무라사);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(조온);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(악마레이무);
+	}
+	dummy++;
+	if (chara == dummy)//
+	{
+		STATtree.getclass(흑화텐시);
+	}
+	dummy++;
+	//dummy++;
+	//STATtree.getclass(총합);
+	STATtree.DoModal();
 }
 
 
